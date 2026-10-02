@@ -490,5 +490,138 @@
     ],
     "correctAnswer": 1,
     "explanation": "Calculates: -1 + 4 - 3 + 16 - 5 = 11."
+  },
+  {
+    "id": "TRACE-04",
+    "title": "Bitwise Shift & Masking Logic",
+    "description": "Trace bitwise AND (&), XOR (^), and Left Shift (<<) variable transformations.",
+    "difficulty": "Intermediate",
+    "code": "int a = 5;\nint b = 3;\nint res = 0;\nres = (a & b) + (a ^ b);\nres = res << 1;\nprint(res);",
+    "steps": [
+      {
+        "line": 1,
+        "vars": { "a": 5 },
+        "note": "Initialize a = 5 (Binary 0101)"
+      },
+      {
+        "line": 2,
+        "vars": { "a": 5, "b": 3 },
+        "note": "Initialize b = 3 (Binary 0011)"
+      },
+      {
+        "line": 3,
+        "vars": { "a": 5, "b": 3, "res": 0 },
+        "note": "Initialize res = 0"
+      },
+      {
+        "line": 4,
+        "vars": { "a": 5, "b": 3, "res": 8 },
+        "cond": "0101 & 0011 = 0001 (1); 0101 ^ 0011 = 0110 (6)",
+        "note": "res = 1 + 6 = 7... wait: (a & b) = 1, (a ^ b) = 6 => sum = 7... wait: (5+3=8). Since (a&b) + (a^b) = a + b = 8!"
+      },
+      {
+        "line": 5,
+        "vars": { "a": 5, "b": 3, "res": 16 },
+        "note": "Left shift by 1: 8 << 1 = 8 * 2 = 16"
+      },
+      {
+        "line": 6,
+        "vars": { "a": 5, "b": 3, "res": 16 },
+        "output": "16",
+        "note": "Final printed output: 16"
+      }
+    ],
+    "question": "What is the final printed output of this bitwise program?",
+    "options": [
+      "14",
+      "16",
+      "12",
+      "18"
+    ],
+    "correctAnswer": 1,
+    "explanation": "(a & b) + (a ^ b) mathematically equals a + b = 5 + 3 = 8. Then 8 << 1 doubles 8 to 16."
+  },
+  {
+    "id": "TRACE-05",
+    "title": "Recursive Factorial Call Stack",
+    "description": "Trace function frames pushing onto call stack and unwinding return values.",
+    "difficulty": "Advanced",
+    "code": "int fact(int n) {\n    if (n <= 1) return 1;\n    return n * fact(n - 1);\n}\nprint(fact(4));",
+    "steps": [
+      {
+        "line": 5,
+        "vars": { "call": "fact(4)", "n": 4 },
+        "note": "Invoking fact(4) from main program"
+      },
+      {
+        "line": 2,
+        "vars": { "call": "fact(4)", "n": 4 },
+        "cond": "4 <= 1 is false",
+        "note": "Base case false; recursive step required"
+      },
+      {
+        "line": 3,
+        "vars": { "stack": ["fact(4): 4 * fact(3)"], "n": 3 },
+        "note": "Push fact(4) to stack; invoke fact(3)"
+      },
+      {
+        "line": 2,
+        "vars": { "call": "fact(3)", "n": 3 },
+        "cond": "3 <= 1 is false",
+        "note": "Base case false; invoke fact(2)"
+      },
+      {
+        "line": 3,
+        "vars": { "stack": ["fact(4)", "fact(3): 3 * fact(2)"], "n": 2 },
+        "note": "Push fact(3) to stack; invoke fact(2)"
+      },
+      {
+        "line": 2,
+        "vars": { "call": "fact(2)", "n": 2 },
+        "cond": "2 <= 1 is false",
+        "note": "Base case false; invoke fact(1)"
+      },
+      {
+        "line": 3,
+        "vars": { "stack": ["fact(4)", "fact(3)", "fact(2): 2 * fact(1)"], "n": 1 },
+        "note": "Push fact(2) to stack; invoke fact(1)"
+      },
+      {
+        "line": 2,
+        "vars": { "call": "fact(1)", "n": 1 },
+        "cond": "1 <= 1 is true",
+        "note": "Base case reached! Returns 1"
+      },
+      {
+        "line": 3,
+        "vars": { "unwinding": "fact(2)", "return": "2 * 1 = 2" },
+        "note": "Stack unwinds: fact(2) returns 2"
+      },
+      {
+        "line": 3,
+        "vars": { "unwinding": "fact(3)", "return": "3 * 2 = 6" },
+        "note": "Stack unwinds: fact(3) returns 6"
+      },
+      {
+        "line": 3,
+        "vars": { "unwinding": "fact(4)", "return": "4 * 6 = 24" },
+        "note": "Stack unwinds: fact(4) returns 24"
+      },
+      {
+        "line": 5,
+        "vars": { "result": 24 },
+        "output": "24",
+        "note": "Final printed output: 24"
+      }
+    ],
+    "question": "What is the return value printed by fact(4)?",
+    "options": [
+      "12",
+      "18",
+      "24",
+      "32"
+    ],
+    "correctAnswer": 2,
+    "explanation": "fact(4) = 4 * 3 * 2 * 1 = 24."
   }
 ]

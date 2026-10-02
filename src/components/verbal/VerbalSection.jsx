@@ -96,6 +96,276 @@ export default function VerbalSection() {
       example: "Despite pushback from stakeholders, the architect remained intransigent on system security.",
       synonyms: ["uncompromising", "stubborn", "inflexible", "obstinate"],
       antonyms: ["amenable", "flexible", "compliant"]
+    },
+    {
+      word: "Ubiquitous",
+      type: "adjective",
+      pronunciation: "/juːˈbɪkwɪtəs/",
+      meaning: "Present, appearing, or found everywhere simultaneously.",
+      example: "Cloud computing services have become ubiquitous across modern enterprise platforms.",
+      synonyms: ["omnipresent", "pervasive", "universal", "widespread"],
+      antonyms: ["rare", "scarce", "isolated"]
+    },
+    {
+      word: "Ephemeral",
+      type: "adjective",
+      pronunciation: "/ɪˈfɛmərəl/",
+      meaning: "Lasting for a very short time; transitory.",
+      example: "Serverless container instances often exist for ephemeral workloads lasting mere seconds.",
+      synonyms: ["transient", "fleeting", "short-lived", "evanescent"],
+      antonyms: ["permanent", "eternal", "perpetual"]
+    },
+    {
+      word: "Pragmatic",
+      type: "adjective",
+      pronunciation: "/præɡˈmætɪk/",
+      meaning: "Dealing with things sensibly and realistically based on practical conditions.",
+      example: "The engineering lead took a pragmatic approach by shipping an MVP ahead of schedule.",
+      synonyms: ["practical", "sensible", "down-to-earth", "utilitarian"],
+      antonyms: ["idealistic", "impractical", "visionary"]
+    },
+    {
+      word: "Pernicious",
+      type: "adjective",
+      pronunciation: "/pəˈnɪʃəs/",
+      meaning: "Having a harmful effect, especially in a gradual or subtle way.",
+      example: "Memory leaks exert a pernicious impact on backend services over prolonged uptime.",
+      synonyms: ["detrimental", "harmful", "destructive", "malignant"],
+      antonyms: ["beneficial", "salutary", "harmless"]
+    },
+    {
+      word: "Alacrity",
+      type: "noun",
+      pronunciation: "/əˈlækrɪti/",
+      meaning: "Brisk and cheerful readiness; promptness in response.",
+      example: "The incident response crew resolved the server alert with remarkable alacrity.",
+      synonyms: ["eagerness", "willingness", "swiftness", "promptness"],
+      antonyms: ["lethargy", "sluggishness", "apathy"]
+    },
+    {
+      word: "Cogent",
+      type: "adjective",
+      pronunciation: "/ˈkəʊdʒənt/",
+      meaning: "Clear, logical, and convincing to the intellect.",
+      example: "The candidate presented a cogent defense of their database sharding architecture.",
+      synonyms: ["compelling", "persuasive", "forceful", "coherent"],
+      antonyms: ["unconvincing", "weak", "muddled"]
+    },
+    {
+      word: "Fastidious",
+      type: "adjective",
+      pronunciation: "/fæˈstɪdiəs/",
+      meaning: "Very attentive to and concerned about accuracy and detail; meticulous.",
+      example: "Her fastidious code review caught edge cases that escaped unit test coverage.",
+      synonyms: ["meticulous", "scrupulous", "painstaking", "exacting"],
+      antonyms: ["careless", "lax", "sloppy"]
+    },
+    {
+      word: "Gregarious",
+      type: "adjective",
+      pronunciation: "/ɡrɪˈɡɛəriəs/",
+      meaning: "Fond of company; sociable and outgoing.",
+      example: "Product managers usually possess gregarious personalities to align cross-functional teams.",
+      synonyms: ["sociable", "companionable", "convivial", "outgoing"],
+      antonyms: ["reclusive", "introverted", "unsociable"]
+    },
+    {
+      word: "Ineffable",
+      type: "adjective",
+      pronunciation: "/ɪnˈɛfəbəl/",
+      meaning: "Too great or extreme to be expressed or described in words.",
+      example: "The founders felt ineffable joy when their startup closed its Series-A funding round.",
+      synonyms: ["indescribable", "inexpressible", "transcendent", "overwhelming"],
+      antonyms: ["definable", "expressible", "mundane"]
+    },
+    {
+      word: "Mitigate",
+      type: "verb",
+      pronunciation: "/ˈmɪtɪɡeɪt/",
+      meaning: "Make something bad less severe, serious, or painful.",
+      example: "Rate limiting was enabled to mitigate the risk of distributed denial-of-service attacks.",
+      synonyms: ["alleviate", "reduce", "diminish", "attenuate"],
+      antonyms: ["aggravate", "exacerbate", "worsen"]
+    },
+    {
+      word: "Nefarious",
+      type: "adjective",
+      pronunciation: "/nɪˈfɛəriəs/",
+      meaning: "Wicked, villainous, or criminal in intent.",
+      example: "The security firewall blocked nefarious attempts to inject malicious SQL scripts.",
+      synonyms: ["wicked", "evil", "sinister", "iniquitous"],
+      antonyms: ["virtuous", "honorable", "noble"]
+    },
+    {
+      word: "Onerous",
+      type: "adjective",
+      pronunciation: "/ˈɒnərəs/",
+      meaning: "Involving an amount of effort and difficulty that is oppressively burdensome.",
+      example: "Manual database migration was an onerous task that took three weekends.",
+      synonyms: ["burdensome", "taxing", "arduous", "laborious"],
+      antonyms: ["effortless", "easy", "light"]
+    },
+    {
+      word: "Prolific",
+      type: "adjective",
+      pronunciation: "/prəˈlɪfɪk/",
+      meaning: "Producing much fruit or foliage or many works with high output.",
+      example: "He was a prolific open-source contributor who authored hundreds of utility libraries.",
+      synonyms: ["productive", "creative", "fertile", "bountiful"],
+      antonyms: ["unproductive", "barren", "fruitless"]
+    },
+    {
+      word: "Querulous",
+      type: "adjective",
+      pronunciation: "/ˈkwɛrʊləs/",
+      meaning: "Complaining in a petulant or whining manner.",
+      example: "The querulous tone of the legacy client ticket distracted the support team.",
+      synonyms: ["complaining", "peevish", "petulant", "whiny"],
+      antonyms: ["contented", "tolerant", "cheerful"]
+    },
+    {
+      word: "Resilient",
+      type: "adjective",
+      pronunciation: "/rɪˈzɪlɪənt/",
+      meaning: "Able to withstand or recover quickly from difficult conditions.",
+      example: "A resilient distributed system gracefully handles node failures without data loss.",
+      synonyms: ["tough", "durable", "buoyant", "adaptable"],
+      antonyms: ["fragile", "vulnerable", "brittle"]
+    },
+    {
+      word: "Sanguine",
+      type: "adjective",
+      pronunciation: "/ˈsæŋɡwɪn/",
+      meaning: "Optimistic or positive, especially in an apparently bad or difficult situation.",
+      example: "Despite server latency issues, the tech lead remained sanguine about the launch date.",
+      synonyms: ["optimistic", "hopeful", "confident", "cheerful"],
+      antonyms: ["pessimistic", "gloomy", "cynical"]
+    },
+    {
+      word: "Trepidation",
+      type: "noun",
+      pronunciation: "/ˌtrɛpɪˈdeɪʃən/",
+      meaning: "A feeling of fear or agitation about something that may happen.",
+      example: "Candidates often face technical interview panels with a sense of trepidation.",
+      synonyms: ["apprehension", "anxiety", "dread", "consternation"],
+      antonyms: ["calm", "composure", "equanimity"]
+    },
+    {
+      word: "Venerable",
+      type: "adjective",
+      pronunciation: "/ˈvɛnərəbəl/",
+      meaning: "Accorded a great deal of respect, especially because of age, wisdom, or character.",
+      example: "C is a venerable programming language that still underpins modern operating systems.",
+      synonyms: ["respected", "revered", "hallowed", "august"],
+      antonyms: ["disreputable", "unimpressive", "ignoble"]
+    },
+    {
+      word: "Zealot",
+      type: "noun",
+      pronunciation: "/ˈzɛlət/",
+      meaning: "A person who is fanatical and uncompromising in pursuit of their ideals.",
+      example: "He was a test-driven development zealot who rejected any pull request without 100% test coverage.",
+      synonyms: ["fanatic", "enthusiast", "partisan", "extremist"],
+      antonyms: ["moderate", "agnostic", "skeptic"]
+    },
+    {
+      word: "Cacophony",
+      type: "noun",
+      pronunciation: "/kəˈkɒfəni/",
+      meaning: "A harsh, discordant mixture of sounds.",
+      example: "The open-floor trading desk echoed with a cacophony of ringing phones and shouting dealers.",
+      synonyms: ["din", "racket", "clamor", "discordance"],
+      antonyms: ["harmony", "euphony", "silence"]
+    },
+    {
+      word: "Disparate",
+      type: "adjective",
+      pronunciation: "/ˈdɪspərət/",
+      meaning: "Essentially different in kind; not allowing comparison.",
+      example: "The ETL pipeline consolidated disparate data sources into a unified cloud data warehouse.",
+      synonyms: ["diverse", "contrasting", "heterogeneous", "distinct"],
+      antonyms: ["homogeneous", "uniform", "identical"]
+    },
+    {
+      word: "Equanimity",
+      type: "noun",
+      pronunciation: "/ˌɛkwəˈnɪmɪti/",
+      meaning: "Mental calmness, composure, and evenness of temper, especially in a difficult situation.",
+      example: "The DevOps on-call engineer handled the production outage with complete equanimity.",
+      synonyms: ["composure", "serenity", "calmness", "self-possession"],
+      antonyms: ["agitation", "anxiety", "hysteria"]
+    },
+    {
+      word: "Garrulous",
+      type: "adjective",
+      pronunciation: "/ˈɡærʊləs/",
+      meaning: "Excessively talkative, especially on trivial matters.",
+      example: "The garrulous presenter exceeded his allotted keynote slot by twenty minutes.",
+      synonyms: ["talkative", "loquacious", "voluble", "verbose"],
+      antonyms: ["taciturn", "reticent", "laconic"]
+    },
+    {
+      word: "Harangue",
+      type: "noun / verb",
+      pronunciation: "/həˈræŋ/",
+      meaning: "A lengthy and aggressive speech or lecture; to lecture someone aggressively.",
+      example: "The manager delivered a stern harangue on adhering to code quality metrics.",
+      synonyms: ["tirade", "diatribe", "rant", "lecture"],
+      antonyms: ["encomium", "praise", "panegyric"]
+    },
+    {
+      word: "Iconoclast",
+      type: "noun",
+      pronunciation: "/aɪˈkɒnəklæst/",
+      meaning: "A person who attacks cherished beliefs or traditional institutions as being erroneous.",
+      example: "The startup founder was an industry iconoclast who challenged conventional hiring paradigms.",
+      synonyms: ["rebel", "dissident", "maverick", "individualist"],
+      antonyms: ["conformist", "traditionalist", "follower"]
+    },
+    {
+      word: "Juxtapose",
+      type: "verb",
+      pronunciation: "/ˌdʒʌkstəˈpəʊz/",
+      meaning: "Place or deal with close together for contrasting effect.",
+      example: "The design report juxtaposed the legacy UI alongside the sleek modern redesign.",
+      synonyms: ["collocate", "contrast", "compare", "pair"],
+      antonyms: ["isolate", "separate", "disconnect"]
+    },
+    {
+      word: "Laconic",
+      type: "adjective",
+      pronunciation: "/ləˈkɒnɪk/",
+      meaning: "Using very few words in speech or writing; brief and concise.",
+      example: "His commit message was famously laconic, consisting solely of 'fixed race condition'.",
+      synonyms: ["brief", "concise", "terse", "succinct"],
+      antonyms: ["verbose", "garrulous", "prolix"]
+    },
+    {
+      word: "Mellifluous",
+      type: "adjective",
+      pronunciation: "/mɛˈlɪflʊəs/",
+      meaning: "Sweet or musical; pleasant to hear.",
+      example: "The audiobook featured a mellifluous voice that kept listeners engaged throughout.",
+      synonyms: ["sweet-sounding", "dulcet", "melodious", "harmonious"],
+      antonyms: ["cacophonous", "harsh", "grating"]
+    },
+    {
+      word: "Nonchalant",
+      type: "adjective",
+      pronunciation: "/ˈnɒnʃələnt/",
+      meaning: "Feeling or appearing casually calm and relaxed; not displaying anxiety.",
+      example: "Despite facing tough interview questions, he gave a nonchalant and confident reply.",
+      synonyms: ["unconcerned", "cool", "casual", "insouciant"],
+      antonyms: ["anxious", "agitated", "concerned"]
+    },
+    {
+      word: "Ostentatious",
+      type: "adjective",
+      pronunciation: "/ˌɒstɛnˈteɪʃəs/",
+      meaning: "Characterized by vulgar or pretentious display; designed to impress or attract notice.",
+      example: "The software architect avoided ostentatious design patterns in favor of clean simplicity.",
+      synonyms: ["showy", "pretentious", "flamboyant", "gaudy"],
+      antonyms: ["modest", "understated", "restrained"]
     }
   ];
 

@@ -4,25 +4,126 @@
     "id": "quant",
     "topics": [
       {
-        "title": "1. Percentages",
-        "rawHtml": "<h3>1. Percentages</h3><div class=\"formula\">Percentage = (Part / Whole) \u00d7 100<br>Percentage change = (Change / Original) \u00d7 100",
-        "plainText": "1. Percentages Percentage = (Part / Whole) \u00d7 100 Percentage change = (Change / Original) \u00d7 100"
+        "title": "1. Percentages & Fraction Conversion Table",
+        "rawHtml": "<h3>1. Percentages & Fraction Equivalents</h3>\n<p>Memorizing key fraction-to-percentage conversions saves up to 40 seconds per arithmetic question.</p>\n<table class=\"mini-table\">\n  <tr><th>Fraction</th><th>Percentage</th><th>Fraction</th><th>Percentage</th></tr>\n  <tr><td>1/2</td><td>50%</td><td>1/7</td><td>14.28%</td></tr>\n  <tr><td>1/3</td><td>33.33%</td><td>1/8</td><td>12.50%</td></tr>\n  <tr><td>1/4</td><td>25%</td><td>1/9</td><td>11.11%</td></tr>\n  <tr><td>1/5</td><td>20%</td><td>1/10</td><td>10%</td></tr>\n  <tr><td>1/6</td><td>16.67%</td><td>1/12</td><td>8.33%</td></tr>\n</table>\n<div class=\"formula\">\n<b>Successive Percentage Change:</b> Net % = a + b + (a \u00d7 b)/100<br>\n<i>Note: Use negative values for decreases/discounts.</i>\n</div>\n<div class=\"tip\">\n<b>Expenditure Constant Trick:</b> If price rises by x%, consumption must decrease by [x / (100 + x)] \u00d7 100% to keep expenditure unchanged.\n</div>",
+        "plainText": "1. Percentages & Fraction Equivalents 1/2=50%, 1/3=33.33%, 1/4=25%, 1/5=20%, 1/6=16.67%, 1/7=14.28%, 1/8=12.5%, 1/9=11.11%, 1/12=8.33%. Successive Percentage Change: Net = a + b + (a*b)/100. Price-Expenditure: [x/(100+x)]*100% reduction."
+      },
+      {
+        "title": "2. Profit, Loss, Discount & False Weights",
+        "rawHtml": "<h3>2. Profit, Loss & Marked Price</h3>\n<div class=\"formula\">\n<b>Profit %:</b> [(SP - CP) / CP] \u00d7 100<br>\n<b>Loss %:</b> [(CP - SP) / CP] \u00d7 100<br>\n<b>Selling Price with Profit:</b> SP = CP \u00d7 [(100 + P%) / 100]<br>\n<b>Discount %:</b> [(MP - SP) / MP] \u00d7 100<br>\n<b>Relation between CP and MP:</b> CP / MP = (100 - Discount%) / (100 + Profit%)\n</div>\n<div class=\"trap\">\n<b>False Weights / Dishonest Dealer:</b><br>\nProfit % = [Error / (True Value - Error)] \u00d7 100%<br>\n<i>Example: Using 900g instead of 1000g &rarr; Gain = [100 / 900] \u00d7 100% = 11.11%.</i>\n</div>",
+        "plainText": "2. Profit, Loss & Marked Price. Profit % = [(SP-CP)/CP]*100. SP = CP * (100+P%)/100. Discount % = [(MP-SP)/MP]*100. CP/MP = (100-D%)/(100+P%). False Weight Gain % = [Error/(True Value - Error)] * 100%."
+      },
+      {
+        "title": "3. Simple & Compound Interest",
+        "rawHtml": "<h3>3. Simple & Compound Interest (SI & CI)</h3>\n<div class=\"formula\">\n<b>Simple Interest (SI):</b> SI = (P \u00d7 R \u00d7 T) / 100<br>\n<b>Compound Amount (A):</b> A = P \u00d7 (1 + R/100)<sup>T</sup><br>\n<b>Compound Interest (CI):</b> CI = A - P\n</div>\n<div class=\"tip\">\n<b>CI - SI Difference Shortcuts:</b><br>\n&bull; For 2 Years: Difference = P \u00d7 (R / 100)<sup>2</sup><br>\n&bull; For 3 Years: Difference = P \u00d7 (R / 100)<sup>2</sup> \u00d7 [(300 + R) / 100]\n</div>\n<div class=\"formula\">\n<b>Compounding Half-Yearly:</b> Rate = R/2, Time = 2T<br>\n<b>Compounding Quarterly:</b> Rate = R/4, Time = 4T\n</div>",
+        "plainText": "3. Simple & Compound Interest. SI = (P*R*T)/100. CI Amount = P(1+R/100)^T. 2-Year CI-SI Difference = P*(R/100)^2. 3-Year CI-SI Difference = P*(R/100)^2 * [(300+R)/100]. Half-yearly: Rate/2, Time*2."
+      },
+      {
+        "title": "4. Ratio, Proportion & Variations",
+        "rawHtml": "<h3>4. Ratio & Proportion</h3>\n<div class=\"formula\">\n<b>Mean Proportional between a and b:</b> x = &radic;(a \u00d7 b)<br>\n<b>Third Proportional to a and b:</b> x = b<sup>2</sup> / a<br>\n<b>Fourth Proportional to a, b, c:</b> x = (b \u00d7 c) / a\n</div>\n<div class=\"tip\">\n<b>Combining Ratios:</b><br>\nIf A : B = 2 : 3 and B : C = 4 : 5<br>\nMultiply to equalize B (LCM = 12): A : B : C = (2\u00d74) : (3\u00d74) : (3\u00d75) = 8 : 12 : 15.\n</div>",
+        "plainText": "4. Ratio & Proportion. Mean proportional = sqrt(a*b). Third proportional = b^2/a. Fourth proportional = (b*c)/a. Combining ratios A:B and B:C via LCM of common term B."
+      },
+      {
+        "title": "5. Time, Speed & Distance, Trains & Boats",
+        "rawHtml": "<h3>5. Time, Speed & Distance, Trains & Boats</h3>\n<div class=\"formula\">\n<b>Speed:</b> Distance / Time<br>\n<b>km/h to m/s conversion:</b> Multiply by 5/18<br>\n<b>m/s to km/h conversion:</b> Multiply by 18/5<br>\n<b>Average Speed (equal distance at speeds x and y):</b> 2xy / (x + y)\n</div>\n<div class=\"tip\">\n<b>Trains Crossing Scenarios:</b><br>\n&bull; Train crossing Pole/Person: Distance = Length of Train (L<sub>T</sub>)<br>\n&bull; Train crossing Platform/Bridge: Distance = L<sub>T</sub> + L<sub>Platform</sub><br>\n&bull; Opposite directions: Relative speed = S<sub>1</sub> + S<sub>2</sub><br>\n&bull; Same direction: Relative speed = |S<sub>1</sub> - S<sub>2</sub>|\n</div>\n<div class=\"formula\">\n<b>Boats & Streams:</b><br>\nDownstream Speed (D) = u + v | Upstream Speed (U) = u - v<br>\nSpeed in Still Water (u) = (D + U) / 2 | Stream Speed (v) = (D - U) / 2\n</div>",
+        "plainText": "5. Time, Speed & Distance. Speed = D/T. km/h to m/s: multiply by 5/18. Avg speed for equal distance: 2xy/(x+y). Train crossing platform: D = L_train + L_platform. Relative speed: S1+S2 opposite, S1-S2 same. Boats: Downstream = u+v, Upstream = u-v. Still water speed = (D+U)/2, Stream = (D-U)/2."
+      },
+      {
+        "title": "6. Time, Work & Pipes/Cisterns",
+        "rawHtml": "<h3>6. Time & Work Formulas</h3>\n<div class=\"formula\">\n<b>Chain Rule:</b> (M<sub>1</sub> \u00d7 D<sub>1</sub> \u00d7 H<sub>1</sub>) / W<sub>1</sub> = (M<sub>2</sub> \u00d7 D<sub>2</sub> \u00d7 H<sub>2</sub>) / W<sub>2</sub><br>\n<b>Two Workers Combined:</b> If A takes x days and B takes y days &rarr; Combined = (x \u00d7 y) / (x + y) days\n</div>\n<div class=\"tip\">\n<b>LCM Efficiency Method:</b><br>\nAssume total work = LCM of individual times.<br>\n<i>Example: A takes 12 days, B takes 18 days. Total work = 36 units. Efficiency A = 3 u/d, B = 2 u/d. Together = 36 / 5 = 7.2 days.</i>\n</div>\n<div class=\"formula\">\n<b>Pipes & Cisterns:</b> Inlet rate is (+), Outlet/Leak rate is (-).<br>\nNet rate = (1/A + 1/B - 1/C) per hour.\n</div>",
+        "plainText": "6. Time & Work. Chain Rule: (M1*D1*H1)/W1 = (M2*D2*H2)/W2. Combined time: (x*y)/(x+y). LCM Efficiency Method: Total Work = LCM of times. Inlet/Outlet net rate: 1/A + 1/B - 1/C."
+      },
+      {
+        "title": "7. Mixtures & Allegations",
+        "rawHtml": "<h3>7. Alligation & Repeated Dilution</h3>\n<div class=\"formula\">\n<b>Rule of Alligation:</b><br>\n(Quantity of Cheaper) / (Quantity of Dearer) = (Price of Dearer - Mean Price) / (Mean Price - Price of Cheaper)\n</div>\n<div class=\"trap\">\n<b>Repeated Dilution Formula:</b><br>\nIf a container holds C units of pure liquid and x units are drawn and replaced by water n times:<br>\n<b>Final Quantity of Pure Liquid = C \u00d7 [1 - (x / C)]<sup>n</sup></b>\n</div>",
+        "plainText": "7. Mixtures & Alligations. Cheaper/Dearer = (Dearer Price - Mean) / (Mean - Cheaper Price). Repeated Replacement: Final pure liquid = C * (1 - x/C)^n."
+      },
+      {
+        "title": "8. Number Systems, Divisibility & Unit Digits",
+        "rawHtml": "<h3>8. Number Systems & Divisibility</h3>\n<table class=\"mini-table\">\n  <tr><th>Divisor</th><th>Condition</th></tr>\n  <tr><td>3 / 9</td><td>Sum of all digits is divisible by 3 or 9</td></tr>\n  <tr><td>4 / 8</td><td>Last 2 digits divisible by 4 / Last 3 digits divisible by 8</td></tr>\n  <tr><td>6</td><td>Divisible by both 2 (even) and 3</td></tr>\n  <tr><td>11</td><td>Difference between (sum of odd placed digits) and (sum of even placed digits) is 0 or multiple of 11</td></tr>\n</table>\n<div class=\"formula\">\n<b>Product of Two Numbers:</b> HCF \u00d7 LCM = Product of the Two Numbers<br>\n<b>Cyclicity of Unit Digits (mod 4):</b><br>\n&bull; 2, 3, 7, 8 have cyclicity of 4 (Divide power by 4, use remainder).<br>\n&bull; 4, 9 have cyclicity of 2 (4<sup>odd</sup>=4, 4<sup>even</sup>=6; 9<sup>odd</sup>=9, 9<sup>even</sup>=1).<br>\n&bull; 0, 1, 5, 6 always end in 0, 1, 5, 6 respectively.\n</div>",
+        "plainText": "8. Number Systems & Divisibility. Divisibility for 3, 4, 6, 8, 9, 11. HCF * LCM = Product of Two Numbers. Unit digit cyclicity: 2,3,7,8 (cycle 4), 4,9 (cycle 2), 0,1,5,6 (cycle 1)."
+      },
+      {
+        "title": "9. Permutations, Combinations & Probability",
+        "rawHtml": "<h3>9. Permutations & Combinations (P&C)</h3>\n<div class=\"formula\">\n<b>Permutations (Order matters):</b> <sup>n</sup>P<sub>r</sub> = n! / (n - r)!<br>\n<b>Combinations (Selection only):</b> <sup>n</sup>C<sub>r</sub> = n! / [r! \u00d7 (n - r)!]<br>\n<b>Circular Arrangement:</b> (n - 1)! (or (n - 1)! / 2 for necklaces/garlands)<br>\n<b>Identical Items Arrangement:</b> n! / (p! \u00d7 q! \u00d7 r!)\n</div>\n<div class=\"tip\">\n<b>Probability:</b> P(Event) = Desired Outcomes / Total Outcomes<br>\nP(A &cup; B) = P(A) + P(B) - P(A &cap; B)<br>\nFor independent events: P(A and B) = P(A) \u00d7 P(B)<br>\nP(at least one success) = 1 - P(zero successes)\n</div>",
+        "plainText": "9. Permutations & Combinations. nPr = n!/(n-r)!. nCr = n!/[r!(n-r)!]. Circular arrangement = (n-1)!. Probability = Desired/Total. P(A union B) = P(A)+P(B)-P(A cap B). At least one = 1 - P(none)."
       }
     ]
-  },
-  {
-    "section": "Verbal Ability",
-    "id": "verbal",
-    "topics": []
   },
   {
     "section": "Logical Reasoning & Puzzles",
     "id": "reasoning",
     "topics": [
       {
-        "title": "1. Number Series",
-        "rawHtml": "<h3>1. Number Series</h3><p>Number-series questions usually test whether you can identify a simple mathematical relationship quickly.</p><h4>Order of checking</h4><ol><li>First differences.</li><li>Second differences.</li><li>Multiplication or division.</li><li>Alternating operations.</li><li>Squares, cubes, primes or powers.</li><li>Two interleaved sequences.</li></ol><div class=\"formula\">Example: 3, 7, 11, 15 \u2192 differences are +4, so next = 19.",
-        "plainText": "1. Number Series Number-series questions usually test whether you can identify a simple mathematical relationship quickly. Order of checking First differences. Second differences. Multiplication or division. Alternating operations. Squares, cubes, primes or powers. Two interleaved sequences. Example: 3, 7, 11, 15 \u2192 differences are +4, so next = 19."
+        "title": "1. Clocks & Angle Formulas",
+        "rawHtml": "<h3>1. Clocks & Angle Calculations</h3>\n<div class=\"formula\">\n<b>Angle between Hour and Minute Hand:</b><br>\n&theta; = |30 \u00d7 H - (11 / 2) \u00d7 M|<br>\n<i>Example at 4:20: &theta; = |30(4) - 5.5(20)| = |120 - 110| = 10&deg;.</i>\n</div>\n<div class=\"tip\">\n<b>Critical Key Clock Facts:</b><br>\n&bull; Minute hand moves 6&deg; per minute (360&deg; / 60 min).<br>\n&bull; Hour hand moves 0.5&deg; per minute (360&deg; / 720 min).<br>\n&bull; Relative speed of minute hand over hour hand = 5.5&deg; per minute (11/2&deg;).<br>\n&bull; Coincide (0&deg;): 22 times in 24 hours.<br>\n&bull; Opposite (180&deg;): 22 times in 24 hours.<br>\n&bull; Right angles (90&deg;): 44 times in 24 hours.\n</div>",
+        "plainText": "1. Clocks & Angles. Angle = |30*H - 5.5*M|. Minute hand = 6 deg/min, Hour hand = 0.5 deg/min. Relative speed = 5.5 deg/min. Coincide 22 times/day, Opposite 22 times/day, Right angle 44 times/day."
+      },
+      {
+        "title": "2. Calendars & Odd Days System",
+        "rawHtml": "<h3>2. Calendars & Odd Days Calculation</h3>\n<p>An 'odd day' is the remainder left when total days are divided by 7.</p>\n<table class=\"mini-table\">\n  <tr><th>Period</th><th>Odd Days</th></tr>\n  <tr><td>Ordinary Year (365 days)</td><td>1 odd day</td></tr>\n  <tr><td>Leap Year (366 days)</td><td>2 odd days</td></tr>\n  <tr><td>100 Years</td><td>5 odd days</td></tr>\n  <tr><td>200 Years</td><td>3 odd days</td></tr>\n  <tr><td>300 Years</td><td>1 odd day</td></tr>\n  <tr><td>400 Years (Century Leap)</td><td>0 odd days</td></tr>\n</table>\n<div class=\"formula\">\n<b>Day Codes:</b> 0 = Sunday, 1 = Monday, 2 = Tuesday, 3 = Wednesday, 4 = Thursday, 5 = Friday, 6 = Saturday.<br>\n<b>Calendar Repetition:</b><br>\n&bull; Leap Year: Repeats after 28 years.<br>\n&bull; Year immediately after leap year (e.g. 2021 after 2020): Repeats after 6 years.<br>\n&bull; Other ordinary years: Repeat after 11 years.\n</div>",
+        "plainText": "2. Calendars & Odd Days. Normal year = 1 odd day. Leap year = 2 odd days. 100 yrs = 5, 200 yrs = 3, 300 yrs = 1, 400 yrs = 0. Calendar repetition: Leap = 28 yrs, Leap+1 = 6 yrs, Others = 11 yrs."
+      },
+      {
+        "title": "3. Seating Arrangement Golden Rules",
+        "rawHtml": "<h3>3. Seating Arrangement Strategies</h3>\n<div class=\"tip\">\n<b>Step-by-Step Solving Approach:</b><br>\n1. <b>Anchor Selection:</b> Begin with 100% definite clues (e.g., 'A sits at the extreme left end' or 'B sits opposite to C').<br>\n2. <b>Direction Awareness:</b><br>\n   &bull; Facing North: Left is West (&larr;), Right is East (&rarr;).<br>\n   &bull; Facing South: Left is East (&rarr;), Right is West (&larr;).<br>\n   &bull; Circular Facing Center: Clockwise is Left, Anti-clockwise is Right.<br>\n   &bull; Circular Facing Outward: Clockwise is Right, Anti-clockwise is Left.<br>\n3. <b>Use Multiple Cases:</b> When a clue offers two possibilities (e.g., B is 2nd to left or right), maintain two parallel sketches and eliminate the contradiction later.\n</div>",
+        "plainText": "3. Seating Arrangement Strategies. Anchor selection: start with definite positions. Facing North (Left=West, Right=East). Facing South (Left=East, Right=West). Center-facing circle (Clockwise=Left, Anti-clockwise=Right). Outward-facing circle (Clockwise=Right, Anti-clockwise=Left)."
+      },
+      {
+        "title": "4. Blood Relations & Generation Mapping",
+        "rawHtml": "<h3>4. Blood Relations Representation</h3>\n<div class=\"formula\">\n<b>Family Tree Notation Standards:</b><br>\n&bull; <b>[ + ]</b> = Male | <b>[ - ]</b> = Female<br>\n&bull; <b>[ = ]</b> = Married Couple (Spouses)<br>\n&bull; <b>[ &mdash; ]</b> = Siblings (Brother/Sister)<br>\n&bull; <b>[ | ]</b> = Vertical generation descent (Parent above, Child below)\n</div>\n<div class=\"trap\">\n<b>Common Trap:</b> Do NOT assume a person's gender from their name! Always verify gender strictly from pronouns ('he', 'she') or explicit relationship words ('father', 'sister', 'daughter').\n</div>",
+        "plainText": "4. Blood Relations. Notation: [+] Male, [-] Female, [=] Spouses, [--] Siblings, [|] Parent-child generation. Caution: Never assume gender from a name alone."
+      },
+      {
+        "title": "5. Syllogisms & Venn Deduction Logic",
+        "rawHtml": "<h3>5. Syllogisms Deduction Rules</h3>\n<table class=\"mini-table\">\n  <tr><th>Statement Type</th><th>Meaning</th><th>Definite Conversion</th></tr>\n  <tr><td>All A are B</td><td>A is completely inside B</td><td>Some B are A</td></tr>\n  <tr><td>Some A are B</td><td>A and B overlap</td><td>Some B are A</td></tr>\n  <tr><td>No A is B</td><td>A and B completely separate</td><td>No B is A</td></tr>\n  <tr><td>Only a few A are B</td><td>Some A are B AND Some A are not B</td><td>Some B are A</td></tr>\n</table>\n<div class=\"tip\">\n<b>Either-Or Complementary Pair Conditions:</b><br>\nBoth conclusions must be uncertain individually, have the same subject and predicate, and form one of the pairs:<br>\n1. 'Some' + 'No'<br>\n2. 'All' + 'Some not'\n</div>",
+        "plainText": "5. Syllogisms. All A are B implies Some B are A. No A is B implies No B is A. 'Only a few' implies Some are and Some are not. Either-Or requires complementary pairs (Some + No, All + Some not) with common terms."
+      },
+      {
+        "title": "6. Order and Ranking Formulas",
+        "rawHtml": "<h3>6. Order and Ranking Cheat Sheet</h3>\n<div class=\"formula\">\n<b>Total Persons in a Row:</b> Total = (Left + Right) - 1<br>\n<b>Position from Right:</b> Right = (Total - Left) + 1<br>\n<b>Interchanging Positions:</b><br>\nTotal = (New position of A + Old position of B) - 1\n</div>\n<div class=\"trap\">\n<b>Overlapping Case (When Left + Right > Total):</b><br>\nPersons between = (Left + Right) - Total - 2<br>\n<b>Non-Overlapping Case (When Left + Right < Total):</b><br>\nPersons between = Total - (Left + Right)\n</div>",
+        "plainText": "6. Order & Ranking. Total = Left + Right - 1. Right = Total - Left + 1. Overlapping between = (Left + Right) - Total - 2. Non-overlapping between = Total - (Left + Right)."
+      },
+      {
+        "title": "7. Coding-Decoding & Opposite Letter Pairs",
+        "rawHtml": "<h3>7. Alphabetical Positions & Opposite Pairs</h3>\n<div class=\"formula\">\n<b>EJOTY Rule:</b> E(5), J(10), O(15), T(20), Y(25)<br>\n<b>VQLG Rule (Reverse):</b> Z(26), Y(25)... A(1)\n</div>\n<div class=\"tip\">\n<b>Opposite Letters Memory Mnemonics (Sum = 27):</b><br>\nA - Z (<b>AZ</b>ad) | B - Y (<b>BY</b>e) | C - X (<b>C</b>ru<b>X</b>) | D - W (<b>D</b>ew / <b>D</b>oor-<b>W</b>indow)<br>\nE - V (<b>EV</b>ening) | F - U (<b>FU</b>ll) | G - T (<b>GT</b> Road) | H - S (<b>H</b>igh <b>S</b>chool)<br>\nI - R (<b>I</b>ndian <b>R</b>ailways) | J - Q (<b>J</b>ungle <b>Q</b>ueen) | K - P (<b>K</b>urta <b>P</b>ajama)<br>\nL - O (<b>LO</b>ve) | M - N (<b>M</b>a<b>N</b>)\n</div>",
+        "plainText": "7. Coding-Decoding. EJOTY = 5, 10, 15, 20, 25. Opposite pairs sum to 27: AZ, BY, CX, DW, EV, FU, GT, HS, IR, JQ, KP, LO, MN."
+      },
+      {
+        "title": "8. Inequalities Decision Flow",
+        "rawHtml": "<h3>8. Inequalities Golden Rules</h3>\n<div class=\"formula\">\n<b>Precedence of Signs:</b><br>\nPriority 1: &gt; or &lt;<br>\nPriority 2: &ge; or &le;<br>\nPriority 3: =\n</div>\n<div class=\"trap\">\n<b>Opposing Signs Break the Relation:</b><br>\nIf A &gt; B &lt; C, or A &le; B &ge; C, NO definite relationship can be established between A and C.<br>\nConclusion is either false or requires an Either-Or pair (A &gt; C or A &le; C).\n</div>",
+        "plainText": "8. Inequalities. Precedence: > / < beats >= / <= beats =. Opposing signs (> and <) block definite comparison; relationship between extremities cannot be determined."
+      }
+    ]
+  },
+  {
+    "section": "Verbal Ability",
+    "id": "verbal",
+    "topics": [
+      {
+        "title": "1. Subject-Verb Agreement Essentials",
+        "rawHtml": "<h3>1. Subject-Verb Agreement Top 5 Rules</h3>\n<div class=\"tip\">\n<b>Rule 1: Proximity Rule (Either/Or, Neither/Nor):</b><br>\nVerb agrees with the subject closest to it.<br>\n<i>&bull; Neither the CEO nor the <b>engineers were</b> present.</i><br>\n<i>&bull; Neither the engineers nor the <b>CEO was</b> present.</i>\n</div>\n<div class=\"tip\">\n<b>Rule 2: Parenthetical Expressions:</b><br>\nWords like <i>'along with', 'as well as', 'together with', 'accompanied by', 'in addition to'</i> do NOT alter the number of the subject.<br>\n<i>&bull; The lead architect, along with his entire team, <b>is</b> deploying the patch (singular).</i>\n</div>\n<div class=\"tip\">\n<b>Rule 3: Indefinite Pronouns:</b><br>\n<i>Each, Everyone, Somebody, Nobody, Either, Neither</i> take singular verbs.<br>\n<i>&bull; Each of the microservices <b>has</b> its own database instance.</i>\n</div>",
+        "plainText": "1. Subject-Verb Agreement. Either/Or agrees with closer subject. 'Along with' / 'as well as' does not change subject number. Each, everyone, neither take singular verbs."
+      },
+      {
+        "title": "2. Conditional Sentences & Tense Structures",
+        "rawHtml": "<h3>2. Conditional Clauses (If-Then Matrix)</h3>\n<table class=\"mini-table\">\n  <tr><th>Type</th><th>Condition Clause ('If')</th><th>Main Clause</th></tr>\n  <tr><td>Zero</td><td>Simple Present</td><td>Simple Present (Universal truth)</td></tr>\n  <tr><td>First</td><td>Simple Present</td><td>will / can / may + Base Verb</td></tr>\n  <tr><td>Second</td><td>Simple Past</td><td>would / could / might + Base Verb</td></tr>\n  <tr><td>Third</td><td>Past Perfect (had + V3)</td><td>would have / could have + V3</td></tr>\n</table>\n<div class=\"trap\">\n<b>Inversion Trap in Third Conditional:</b><br>\n'If he had known' &rarr; 'Had he known'.<br>\n<i>Correct: 'Had the team run unit tests, the bug would have been caught.' (Do NOT write 'Had they had run').</i>\n</div>",
+        "plainText": "2. Conditional Sentences. Zero (Present -> Present). First (Present -> will+verb). Second (Past -> would+verb). Third (had+V3 -> would have+V3). Inversion: 'Had he known...'."
+      },
+      {
+        "title": "3. Dangling & Misplaced Modifiers",
+        "rawHtml": "<h3>3. Dangling & Misplaced Modifiers</h3>\n<div class=\"danger-note\">\n<b>The Golden Rule:</b> An introductory descriptive phrase must immediately precede the noun that actually performs the action.\n</div>\n<div class=\"formula\">\n<b>Incorrect:</b> Walking into the server room, the cold air chilled Raman.<br>\n<i>(Was the cold air walking into the room? No!)</i><br>\n<b>Correct:</b> Walking into the server room, Raman felt chilled by the cold air.\n</div>",
+        "plainText": "3. Dangling Modifiers. Introductory participle phrases must immediately modify the doer of the action. Incorrect: Walking to office, rain fell. Correct: Walking to office, I got wet."
+      },
+      {
+        "title": "4. Parallelism in Sentence Correction",
+        "rawHtml": "<h3>4. Parallelism & Correlative Conjunctions</h3>\n<p>Items in a list or connected by correlative conjunctions must share identical grammatical form.</p>\n<div class=\"formula\">\n<b>Correlative Pairs:</b> Not only... but also | Either... or | Neither... nor | Both... and<br>\n<b>Incorrect:</b> She likes coding, designing, and to deploy microservices.<br>\n<b>Correct:</b> She likes coding, designing, and <b>deploying</b> microservices.\n</div>\n<div class=\"tip\">\nEnsure the element following 'Not only' grammatically mirrors the element following 'but also' (Verb with Verb, Noun with Noun).\n</div>",
+        "plainText": "4. Parallelism. Elements joined by and/or/not only...but also must match in grammatical structure (all gerunds, all infinitives, or all nouns)."
+      },
+      {
+        "title": "5. Active vs Passive Voice & Indirect Speech",
+        "rawHtml": "<h3>5. Voice & Narration Shift Rules</h3>\n<div class=\"formula\">\n<b>Tense Shift in Reported Speech (Past Reporting Verb):</b><br>\n&bull; Simple Present &rarr; Simple Past<br>\n&bull; Present Continuous &rarr; Past Continuous<br>\n&bull; Simple Past &rarr; Past Perfect<br>\n&bull; Can &rarr; Could | Will &rarr; Would | May &rarr; Might\n</div>\n<div class=\"tip\">\nUniversal scientific truths do NOT change tense in indirect speech.<br>\n<i>Example: He said, 'The earth revolves around the sun' &rarr; He said that the earth revolves around the sun.</i>\n</div>",
+        "plainText": "5. Voice & Speech. Simple Present -> Simple Past. Simple Past -> Past Perfect. Will -> Would, Can -> Could. Universal truths remain in present tense."
       }
     ]
   },
@@ -31,35 +132,61 @@
     "id": "pseudo",
     "topics": [
       {
-        "title": "1. Variable Tracing",
-        "rawHtml": "<h3>1. Variable Tracing</h3><p>Write the initial value of every important variable. After each assignment, update the value on paper.</p><div class=\"formula\">x = 5<br>x = x + 2 \u2192 x = 7<br>x = x \u00d7 3 \u2192 x = 21",
-        "plainText": "1. Variable Tracing Write the initial value of every important variable. After each assignment, update the value on paper. x = 5 x = x + 2 \u2192 x = 7 x = x \u00d7 3 \u2192 x = 21"
+        "title": "1. Bitwise Operators & Bit Shifting",
+        "rawHtml": "<h3>1. Bitwise Operators Cheat Sheet</h3>\n<table class=\"mini-table\">\n  <tr><th>Operator</th><th>Name</th><th>Operation</th><th>Key Property</th></tr>\n  <tr><td>&amp;</td><td>AND</td><td>1 only if both bits 1</td><td>x &amp; 0 = 0 | x &amp; 1 = x</td></tr>\n  <tr><td>|</td><td>OR</td><td>1 if either bit 1</td><td>x | 0 = x | x | 1 = 1</td></tr>\n  <tr><td>^</td><td>XOR</td><td>1 if bits are different</td><td>x ^ x = 0 | x ^ 0 = x</td></tr>\n  <tr><td>~</td><td>NOT</td><td>Inverts all bits</td><td>~x = -(x + 1)</td></tr>\n  <tr><td>&lt;&lt; k</td><td>Left Shift</td><td>Shifts bits left by k</td><td><b>Multiplies by 2<sup>k</sup></b></td></tr>\n  <tr><td>&gt;&gt; k</td><td>Right Shift</td><td>Shifts bits right by k</td><td><b>Divides by 2<sup>k</sup></b> (floor)</td></tr>\n</table>\n<div class=\"tip\">\n<b>Infosys Trick:</b><br>\n&bull; <code>x & (x - 1)</code> clears the lowest set bit. If <code>(x & (x - 1)) == 0</code>, x is a power of 2!<br>\n&bull; <code>x ^ y</code> without carry is used in parity checks and finding unique single numbers.\n</div>",
+        "plainText": "1. Bitwise Operators. AND (&), OR (|), XOR (^), NOT (~ = -(x+1)), Left shift << k (multiply by 2^k), Right shift >> k (divide by 2^k). x & (x-1) clears lowest set bit."
+      },
+      {
+        "title": "2. Loop Tracing Table Technique",
+        "rawHtml": "<h3>2. Systematic Loop Tracing</h3>\n<p>To avoid silly off-by-one errors, always sketch a 4-column trace table:</p>\n<table class=\"mini-table\">\n  <tr><th>Iteration</th><th>Condition Checked</th><th>State Variables</th><th>Output / Print</th></tr>\n  <tr><td>1</td><td>i &le; 3 (1 &le; 3 &rarr; True)</td><td>a = 2, i = 2</td><td>-</td></tr>\n  <tr><td>2</td><td>i &le; 3 (2 &le; 3 &rarr; True)</td><td>a = 4, i = 3</td><td>-</td></tr>\n  <tr><td>3</td><td>i &le; 3 (3 &le; 3 &rarr; True)</td><td>a = 8, i = 4</td><td>-</td></tr>\n  <tr><td>Exit</td><td>i &le; 3 (4 &le; 3 &rarr; False)</td><td>Loop terminates</td><td>Print(a) = 8</td></tr>\n</table>\n<div class=\"trap\">\n<b>Watch for Prefix vs Postfix increments:</b><br>\n&bull; <code>++x</code>: Increments first, returns new value.<br>\n&bull; <code>x++</code>: Returns current value, increments afterwards.\n</div>",
+        "plainText": "2. Systematic Loop Tracing. Maintain columns: Iteration, Condition, State Variables, Output. Differentiate prefix (++x) vs postfix (x++)."
+      },
+      {
+        "title": "3. Recursion & Stack Frames",
+        "rawHtml": "<h3>3. Recursion Evaluation</h3>\n<div class=\"formula\">\n<b>Two Essential Components:</b><br>\n1. <b>Base Case:</b> Prevents infinite recursion (e.g. <code>if (n &le; 1) return 1</code>).<br>\n2. <b>Recursive Step:</b> Shrinks problem towards the base case (e.g. <code>return n * fact(n - 1)</code>).\n</div>\n<div class=\"tip\">\n<b>Tree vs Linear Recursion:</b><br>\nIf a function calls itself twice (like <code>fib(n-1) + fib(n-2)</code>), sketch a small tree structure downwards, then sum values upward on the unwinding phase.\n</div>",
+        "plainText": "3. Recursion. Base case stops execution; recursive call reduces input. Trace call tree downwards to base case, then unwind returns back up."
+      },
+      {
+        "title": "4. Short-Circuit Evaluation & Operator Precedence",
+        "rawHtml": "<h3>4. Short-Circuit Logic & Precedence</h3>\n<div class=\"tip\">\n<b>Short-Circuit Rules:</b><br>\n&bull; In <code>A && B</code>: If A is <b>FALSE</b>, B is never evaluated.<br>\n&bull; In <code>A || B</code>: If A is <b>TRUE</b>, B is never evaluated.<br>\n<i>Example: <code>if (x == 0 || ++y > 5)</code> &rarr; If x is 0, y is NOT incremented!</i>\n</div>\n<div class=\"formula\">\n<b>Standard Precedence Hierarchy:</b><br>\nParentheses () &rarr; Postfix ++/-- &rarr; Prefix ++/-- &rarr; Multiplicative (*, /, %) &rarr; Additive (+, -) &rarr; Relational (&lt;, &gt;) &rarr; Equality (==, !=) &rarr; Bitwise (&amp;, ^, |) &rarr; Logical (&amp;&amp;, ||) &rarr; Assignment (=)\n</div>",
+        "plainText": "4. Short-Circuit & Precedence. A && B skips B if A is False. A || B skips B if A is True. Precedence: () -> ++/-- -> */% -> +/- -> comparisons -> logical -> assignment."
       }
     ]
   },
   {
-    "section": "Critical Thinking",
+    "section": "Critical Thinking & Data Sufficiency",
     "id": "critical",
-    "topics": []
+    "topics": [
+      {
+        "title": "1. Data Sufficiency 5-Step Elimination",
+        "rawHtml": "<h3>1. Data Sufficiency Solving Strategy</h3>\n<div class=\"formula\">\n<b>Standard Answer Choices:</b><br>\n(A) Statement I alone is sufficient, but II alone is not.<br>\n(B) Statement II alone is sufficient, but I alone is not.<br>\n(C) Statements I and II TOGETHER are sufficient.<br>\n(D) Statements I and II together are NOT sufficient.<br>\n(E) EACH statement alone is sufficient.\n</div>\n<div class=\"tip\">\n<b>Elimination Protocol (12-D Method):</b><br>\n&bull; Evaluate Statement I alone. If YES, answer is (A) or (E). If NO, answer is (B), (C), or (D).<br>\n&bull; Evaluate Statement II alone. If YES, answer is (B) or (E). If NO, answer is (C) or (D).<br>\n&bull; Only combine I and II if BOTH failed independently.\n</div>",
+        "plainText": "1. Data Sufficiency. Evaluate Statement 1 alone. Evaluate Statement 2 alone. Combine both only if neither works independently. Never bring outside unstated assumptions."
+      },
+      {
+        "title": "2. Statement and Assumptions",
+        "rawHtml": "<h3>2. Identifying Implicit Assumptions</h3>\n<div class=\"tip\">\nAn assumption is unstated premise that the speaker/author MUST believe for the argument to hold validity.<br>\n<b>Negation Test:</b> Negate the assumption. If the original statement collapses or becomes illogical, the assumption is <b>IMPLICIT</b>.\n</div>\n<div class=\"danger-note\">\n<b>Red Flag Words:</b> Words like <i>'all', 'every', 'never', 'only', 'impossible'</i> indicate extreme assumptions that are usually NOT implicit unless explicitly justified.\n</div>",
+        "plainText": "2. Statement & Assumptions. An assumption is implicit if negating it destroys the core statement. Avoid extreme assumptions containing 'all', 'only', 'never'."
+      },
+      {
+        "title": "3. Statement and Course of Action",
+        "rawHtml": "<h3>3. Course of Action Guidelines</h3>\n<div class=\"tip\">\n<b>Criteria for a Valid Course of Action:</b><br>\n1. <b>Feasibility:</b> Is it realistic and practically executable?<br>\n2. <b>Direct Problem Mitigation:</b> Does it directly tackle the issue stated?<br>\n3. <b>Proportionality:</b> The action must NOT be excessively harsh or create a worse problem than the original one.\n</div>",
+        "plainText": "3. Course of Action. Must be practically feasible, proportional to severity, and directly resolve the problem without causing worse unintended consequences."
+      }
+    ]
   },
   {
     "section": "Exam Strategy",
     "id": "strategy",
     "topics": [
       {
-        "title": "1. 90-Minute Mock Strategy",
-        "rawHtml": "<h3>1. 90-Minute Mock Strategy</h3><div class=\"formula\">54 questions / 90 minutes \u2248 1.67 minutes per question on average",
-        "plainText": "1. 90-Minute Mock Strategy 54 questions / 90 minutes \u2248 1.67 minutes per question on average"
+        "title": "1. 90-Minute Sectional Pacing Strategy",
+        "rawHtml": "<h3>1. Infosys SE Exam Sectional Breakdown</h3>\n<table class=\"mini-table\">\n  <tr><th>Section</th><th>Questions</th><th>Ideal Time</th><th>Strategy</th></tr>\n  <tr><td>Quantitative Aptitude</td><td>10 Qs</td><td>25 Mins</td><td>High calculation accuracy, use fraction tricks</td></tr>\n  <tr><td>Logical Reasoning</td><td>15 Qs</td><td>25 Mins</td><td>Pick anchor clues first; avoid getting stuck in 1 puzzle</td></tr>\n  <tr><td>Verbal Ability</td><td>20 Qs</td><td>20 Mins</td><td>Direct grammar checks, fast reading comprehension</td></tr>\n  <tr><td>Pseudocode & Tracing</td><td>9 Qs</td><td>10 Mins</td><td>Use 4-column trace table; check short-circuits</td></tr>\n  <tr><td><b>Total</b></td><td><b>54 Qs</b></td><td><b>90 Mins</b></td><td>Average ~1.67 mins / question</td></tr>\n</table>",
+        "plainText": "1. Exam Breakdown: Quant 10 Qs (25 min), Logical 15 Qs (25 min), Verbal 20 Qs (20 min), Pseudocode 9 Qs (10 min). Total 54 Qs in 90 Mins."
       },
       {
-        "title": "2. Three-Pass Method",
-        "rawHtml": "<h3>2. Three-Pass Method</h3><ol><li><b>Pass 1:</b> Solve questions you can answer confidently and quickly.</li><li><b>Pass 2:</b> Solve medium questions requiring calculation or careful reasoning.</li><li><b>Pass 3:</b> Return to long puzzles, difficult pseudocode and uncertain questions.</li></ol>",
-        "plainText": "2. Three-Pass Method Pass 1: Solve questions you can answer confidently and quickly. Pass 2: Solve medium questions requiring calculation or careful reasoning. Pass 3: Return to long puzzles, difficult pseudocode and uncertain questions."
-      },
-      {
-        "title": "3. Time Checkpoints",
-        "rawHtml": "<h3>3. Time Checkpoints</h3><table class=\"mini-table\"><tr><th>Remaining time</th><th>Action</th></tr><tr><td>60 minutes</td><td>Do not allow one difficult question to consume several minutes.</td></tr><tr><td>30 minutes</td><td>Complete remaining direct questions and reduce backlog.</td></tr><tr><td>15 minutes</td><td>Focus on unanswered and flagged questions.</td></tr><tr><td>5 minutes</td><td>Check unanswered items and wording traps.</td></tr></table>",
-        "plainText": "3. Time Checkpoints Remaining time Action 60 minutes Do not allow one difficult question to consume several minutes. 30 minutes Complete remaining direct questions and reduce backlog. 15 minutes Focus on unanswered and flagged questions. 5 minutes Check unanswered items and wording traps."
+        "title": "2. Three-Pass Examination Strategy",
+        "rawHtml": "<h3>2. The Three-Pass Strategy</h3>\n<div class=\"tip\">\n<b>Pass 1 (0 &ndash; 35 min): Direct Confidence Hits</b><br>\nAnswer all direct formula-based quant, vocabulary, grammar corrections, and straightforward reasoning questions. Skip long puzzles or complex code tracing immediately.\n</div>\n<div class=\"tip\">\n<b>Pass 2 (35 &ndash; 75 min): Medium Complexity & Arrangements</b><br>\nSolve multi-step math problems, seating arrangements, syllogisms, and line-by-line pseudocode.\n</div>\n<div class=\"tip\">\n<b>Pass 3 (75 &ndash; 90 min): Challenging Puzzles & Final Review</b><br>\nTackle complex multi-variable floor/box puzzles, verify boundary conditions, and ensure 0 questions remain unanswered.\n</div>",
+        "plainText": "2. Three-Pass Strategy. Pass 1: Quick 30-sec direct questions. Pass 2: Medium calculation & standard logic. Pass 3: Long puzzles, difficult pseudocode, final checks."
       }
     ]
   }

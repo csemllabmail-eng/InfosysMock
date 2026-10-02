@@ -32,12 +32,12 @@ export default function Navbar({
             onClick={() => onNavigate('dashboard')}
             className="flex items-center gap-2.5 cursor-pointer group"
           >
-            <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-brand-600 to-indigo-600 text-white flex items-center justify-center font-black shadow-md shadow-brand-500/25 group-hover:scale-105 transition-transform">
-              SE
+            <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-brand-600 to-indigo-600 text-white flex items-center justify-center font-black shadow-md shadow-brand-500/25 group-hover:scale-105 transition-transform text-xs">
+              HIT
             </div>
             <div>
               <div className="font-extrabold text-base tracking-tight text-slate-900 dark:text-white flex items-center gap-1.5">
-                PrepForge <span className="text-brand-600 dark:text-brand-400 text-xs px-1.5 py-0.5 rounded bg-brand-50 dark:bg-brand-950/80 border border-brand-200 dark:border-brand-800">Infosys SE</span>
+                PrepHIT <span className="text-brand-600 dark:text-brand-400 text-xs px-1.5 py-0.5 rounded bg-brand-50 dark:bg-brand-950/80 border border-brand-200 dark:border-brand-800">Infosys SE</span>
               </div>
               <p className="text-[11px] text-slate-500 dark:text-slate-400 hidden sm:block">
                 Hiring Assessment Prep Suite

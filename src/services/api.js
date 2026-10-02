@@ -55,7 +55,7 @@ export const getAllQuestions = () => {
   return [...custom, ...defaultQuestions];
 };
 
-export const fetchQuestions = async ({ section, topic, difficulty, search } = {}) => {
+export const fetchQuestions = async ({ section, topic, subtopic, difficulty, search } = {}) => {
   let list = getAllQuestions();
 
   if (section && section !== 'All') {
@@ -64,7 +64,12 @@ export const fetchQuestions = async ({ section, topic, difficulty, search } = {}
   if (topic && topic !== 'All') {
     list = list.filter(q => 
       q.topic.toLowerCase() === topic.toLowerCase() || 
-      q.subtopic.toLowerCase() === topic.toLowerCase()
+      (q.subtopic && q.subtopic.toLowerCase() === topic.toLowerCase())
+    );
+  }
+  if (subtopic && subtopic !== 'All') {
+    list = list.filter(q => 
+      q.subtopic && q.subtopic.toLowerCase() === subtopic.toLowerCase()
     );
   }
   if (difficulty && difficulty !== 'All') {

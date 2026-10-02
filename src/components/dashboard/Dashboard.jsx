@@ -55,12 +55,12 @@ export default function Dashboard({ onNavigate, onStartTest }) {
       id: 'reasoning',
       title: 'Logical Reasoning & Puzzles',
       category: 'Deductions & Arrangements',
-      description: 'Linear & Circular Arrangements, Multi-Floor Tech Towers, Syllogisms, and Data Sufficiency.',
+      description: '18 Specialized Topics: Linear & Circular Seating, Floor Puzzles, Blood Relations, Syllogisms, and Speed Drills.',
       icon: BrainCircuit,
       color: 'from-amber-500 to-orange-500',
       badgeColor: 'bg-amber-50 dark:bg-amber-950/60 text-amber-700 dark:text-amber-300 border-amber-200 dark:border-amber-800',
       examPattern: '15 Qs · 25 Mins',
-      inventory: '295 Practice Questions',
+      inventory: '495 Questions · 18 Topics',
       difficulty: 'High Cognitive Load'
     },
     {

@@ -19,7 +19,7 @@ export default function Sidebar({
     { id: 'dashboard', label: 'Dashboard', icon: LayoutDashboard },
     { id: 'quant', label: 'Quantitative Aptitude', icon: Calculator, badge: 'Aptitude' },
     { id: 'verbal', label: 'Verbal Ability', icon: Languages, badge: 'Verbal' },
-    { id: 'reasoning', label: 'Logical & Puzzles', icon: BrainCircuit, badge: 'Puzzles' },
+    { id: 'reasoning', label: 'Logical Reasoning', icon: BrainCircuit, badge: '18 Topics' },
     { id: 'pseudocode', label: 'Pseudocode & Tracing', icon: Terminal, badge: 'Tracing' },
     { id: 'mock', label: 'Mock Tests', icon: FileCheck2, count: '15' },
     { id: 'analytics', label: 'Performance Analytics', icon: BarChart3 },
