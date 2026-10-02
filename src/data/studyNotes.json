@@ -1,0 +1,66 @@
+[
+  {
+    "section": "Quantitative Aptitude",
+    "id": "quant",
+    "topics": [
+      {
+        "title": "1. Percentages",
+        "rawHtml": "<h3>1. Percentages</h3><div class=\"formula\">Percentage = (Part / Whole) \u00d7 100<br>Percentage change = (Change / Original) \u00d7 100",
+        "plainText": "1. Percentages Percentage = (Part / Whole) \u00d7 100 Percentage change = (Change / Original) \u00d7 100"
+      }
+    ]
+  },
+  {
+    "section": "Verbal Ability",
+    "id": "verbal",
+    "topics": []
+  },
+  {
+    "section": "Logical Reasoning & Puzzles",
+    "id": "reasoning",
+    "topics": [
+      {
+        "title": "1. Number Series",
+        "rawHtml": "<h3>1. Number Series</h3><p>Number-series questions usually test whether you can identify a simple mathematical relationship quickly.</p><h4>Order of checking</h4><ol><li>First differences.</li><li>Second differences.</li><li>Multiplication or division.</li><li>Alternating operations.</li><li>Squares, cubes, primes or powers.</li><li>Two interleaved sequences.</li></ol><div class=\"formula\">Example: 3, 7, 11, 15 \u2192 differences are +4, so next = 19.",
+        "plainText": "1. Number Series Number-series questions usually test whether you can identify a simple mathematical relationship quickly. Order of checking First differences. Second differences. Multiplication or division. Alternating operations. Squares, cubes, primes or powers. Two interleaved sequences. Example: 3, 7, 11, 15 \u2192 differences are +4, so next = 19."
+      }
+    ]
+  },
+  {
+    "section": "Pseudocode & Programming Logic",
+    "id": "pseudo",
+    "topics": [
+      {
+        "title": "1. Variable Tracing",
+        "rawHtml": "<h3>1. Variable Tracing</h3><p>Write the initial value of every important variable. After each assignment, update the value on paper.</p><div class=\"formula\">x = 5<br>x = x + 2 \u2192 x = 7<br>x = x \u00d7 3 \u2192 x = 21",
+        "plainText": "1. Variable Tracing Write the initial value of every important variable. After each assignment, update the value on paper. x = 5 x = x + 2 \u2192 x = 7 x = x \u00d7 3 \u2192 x = 21"
+      }
+    ]
+  },
+  {
+    "section": "Critical Thinking",
+    "id": "critical",
+    "topics": []
+  },
+  {
+    "section": "Exam Strategy",
+    "id": "strategy",
+    "topics": [
+      {
+        "title": "1. 90-Minute Mock Strategy",
+        "rawHtml": "<h3>1. 90-Minute Mock Strategy</h3><div class=\"formula\">54 questions / 90 minutes \u2248 1.67 minutes per question on average",
+        "plainText": "1. 90-Minute Mock Strategy 54 questions / 90 minutes \u2248 1.67 minutes per question on average"
+      },
+      {
+        "title": "2. Three-Pass Method",
+        "rawHtml": "<h3>2. Three-Pass Method</h3><ol><li><b>Pass 1:</b> Solve questions you can answer confidently and quickly.</li><li><b>Pass 2:</b> Solve medium questions requiring calculation or careful reasoning.</li><li><b>Pass 3:</b> Return to long puzzles, difficult pseudocode and uncertain questions.</li></ol>",
+        "plainText": "2. Three-Pass Method Pass 1: Solve questions you can answer confidently and quickly. Pass 2: Solve medium questions requiring calculation or careful reasoning. Pass 3: Return to long puzzles, difficult pseudocode and uncertain questions."
+      },
+      {
+        "title": "3. Time Checkpoints",
+        "rawHtml": "<h3>3. Time Checkpoints</h3><table class=\"mini-table\"><tr><th>Remaining time</th><th>Action</th></tr><tr><td>60 minutes</td><td>Do not allow one difficult question to consume several minutes.</td></tr><tr><td>30 minutes</td><td>Complete remaining direct questions and reduce backlog.</td></tr><tr><td>15 minutes</td><td>Focus on unanswered and flagged questions.</td></tr><tr><td>5 minutes</td><td>Check unanswered items and wording traps.</td></tr></table>",
+        "plainText": "3. Time Checkpoints Remaining time Action 60 minutes Do not allow one difficult question to consume several minutes. 30 minutes Complete remaining direct questions and reduce backlog. 15 minutes Focus on unanswered and flagged questions. 5 minutes Check unanswered items and wording traps."
+      }
+    ]
+  }
+]

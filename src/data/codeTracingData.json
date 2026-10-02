@@ -1,0 +1,494 @@
+[
+  {
+    "id": "TRACE-01",
+    "title": "Nested Loop Accumulator",
+    "description": "Trace step-by-step how variable 'count' accumulates in a triangular nested loop.",
+    "difficulty": "Intermediate",
+    "code": "int count = 0;\nfor (int i = 1; i <= 4; i++) {\n    for (int j = i; j <= 4; j++) {\n        count = count + 1;\n    }\n}\nprint(count);",
+    "steps": [
+      {
+        "line": 1,
+        "vars": {
+          "count": 0
+        },
+        "note": "Initialized count = 0"
+      },
+      {
+        "line": 2,
+        "vars": {
+          "count": 0,
+          "i": 1
+        },
+        "cond": "i <= 4 is true",
+        "note": "Outer loop i=1"
+      },
+      {
+        "line": 3,
+        "vars": {
+          "count": 0,
+          "i": 1,
+          "j": 1
+        },
+        "cond": "j <= 4 is true",
+        "note": "Inner loop j=1"
+      },
+      {
+        "line": 4,
+        "vars": {
+          "count": 1,
+          "i": 1,
+          "j": 1
+        },
+        "note": "count updated to 1"
+      },
+      {
+        "line": 3,
+        "vars": {
+          "count": 1,
+          "i": 1,
+          "j": 2
+        },
+        "cond": "j <= 4 is true",
+        "note": "Inner loop j=2"
+      },
+      {
+        "line": 4,
+        "vars": {
+          "count": 2,
+          "i": 1,
+          "j": 2
+        },
+        "note": "count updated to 2"
+      },
+      {
+        "line": 3,
+        "vars": {
+          "count": 2,
+          "i": 1,
+          "j": 3
+        },
+        "cond": "j <= 4 is true",
+        "note": "Inner loop j=3"
+      },
+      {
+        "line": 4,
+        "vars": {
+          "count": 3,
+          "i": 1,
+          "j": 3
+        },
+        "note": "count updated to 3"
+      },
+      {
+        "line": 3,
+        "vars": {
+          "count": 3,
+          "i": 1,
+          "j": 4
+        },
+        "cond": "j <= 4 is true",
+        "note": "Inner loop j=4"
+      },
+      {
+        "line": 4,
+        "vars": {
+          "count": 4,
+          "i": 1,
+          "j": 4
+        },
+        "note": "count updated to 4"
+      },
+      {
+        "line": 3,
+        "vars": {
+          "count": 4,
+          "i": 1,
+          "j": 5
+        },
+        "cond": "j <= 4 is false",
+        "note": "Inner loop terminates for i=1 (ran 4 times)"
+      },
+      {
+        "line": 2,
+        "vars": {
+          "count": 4,
+          "i": 2
+        },
+        "cond": "i <= 4 is true",
+        "note": "Outer loop i=2. Inner loop will run for j=2,3,4 (3 times)"
+      },
+      {
+        "line": 4,
+        "vars": {
+          "count": 7,
+          "i": 2,
+          "j": 4
+        },
+        "note": "After i=2 finishes, count = 4 + 3 = 7"
+      },
+      {
+        "line": 2,
+        "vars": {
+          "count": 7,
+          "i": 3
+        },
+        "cond": "i <= 4 is true",
+        "note": "Outer loop i=3. Inner loop will run for j=3,4 (2 times)"
+      },
+      {
+        "line": 4,
+        "vars": {
+          "count": 9,
+          "i": 3,
+          "j": 4
+        },
+        "note": "After i=3 finishes, count = 7 + 2 = 9"
+      },
+      {
+        "line": 2,
+        "vars": {
+          "count": 9,
+          "i": 4
+        },
+        "cond": "i <= 4 is true",
+        "note": "Outer loop i=4. Inner loop runs for j=4 (1 time)"
+      },
+      {
+        "line": 4,
+        "vars": {
+          "count": 10,
+          "i": 4,
+          "j": 4
+        },
+        "note": "After i=4 finishes, count = 9 + 1 = 10"
+      },
+      {
+        "line": 2,
+        "vars": {
+          "count": 10,
+          "i": 5
+        },
+        "cond": "i <= 4 is false",
+        "note": "Outer loop terminates"
+      },
+      {
+        "line": 7,
+        "vars": {
+          "count": 10
+        },
+        "output": "10",
+        "note": "Final output printed: 10"
+      }
+    ],
+    "question": "What is the final value printed by this pseudocode?",
+    "options": [
+      "8",
+      "10",
+      "12",
+      "16"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Inner loop runs 4 times (i=1), 3 times (i=2), 2 times (i=3), 1 time (i=4). Total iterations = 4+3+2+1 = 10."
+  },
+  {
+    "id": "TRACE-02",
+    "title": "Variable Swap and Accumulate",
+    "description": "Trace variable updates where x and y undergo arithmetic swaps inside a loop.",
+    "difficulty": "Intermediate",
+    "code": "int x = 2, y = 3;\nfor (int i = 1; i <= 3; i++) {\n    x = x + y;\n    y = x - y;\n}\nprint(x + \", \" + y);",
+    "steps": [
+      {
+        "line": 1,
+        "vars": {
+          "x": 2,
+          "y": 3
+        },
+        "note": "Initial values: x=2, y=3"
+      },
+      {
+        "line": 2,
+        "vars": {
+          "x": 2,
+          "y": 3,
+          "i": 1
+        },
+        "cond": "i <= 3 is true",
+        "note": "Iteration 1 starts"
+      },
+      {
+        "line": 3,
+        "vars": {
+          "x": 5,
+          "y": 3,
+          "i": 1
+        },
+        "note": "x = 2 + 3 = 5"
+      },
+      {
+        "line": 4,
+        "vars": {
+          "x": 5,
+          "y": 2,
+          "i": 1
+        },
+        "note": "y = 5 - 3 = 2"
+      },
+      {
+        "line": 2,
+        "vars": {
+          "x": 5,
+          "y": 2,
+          "i": 2
+        },
+        "cond": "i <= 3 is true",
+        "note": "Iteration 2 starts"
+      },
+      {
+        "line": 3,
+        "vars": {
+          "x": 7,
+          "y": 2,
+          "i": 2
+        },
+        "note": "x = 5 + 2 = 7"
+      },
+      {
+        "line": 4,
+        "vars": {
+          "x": 7,
+          "y": 5,
+          "i": 2
+        },
+        "note": "y = 7 - 2 = 5"
+      },
+      {
+        "line": 2,
+        "vars": {
+          "x": 7,
+          "y": 5,
+          "i": 3
+        },
+        "cond": "i <= 3 is true",
+        "note": "Iteration 3 starts"
+      },
+      {
+        "line": 3,
+        "vars": {
+          "x": 12,
+          "y": 5,
+          "i": 3
+        },
+        "note": "x = 7 + 5 = 12"
+      },
+      {
+        "line": 4,
+        "vars": {
+          "x": 12,
+          "y": 7,
+          "i": 3
+        },
+        "note": "y = 12 - 5 = 7"
+      },
+      {
+        "line": 2,
+        "vars": {
+          "x": 12,
+          "y": 7,
+          "i": 4
+        },
+        "cond": "i <= 3 is false",
+        "note": "Loop finishes"
+      },
+      {
+        "line": 6,
+        "vars": {
+          "x": 12,
+          "y": 7
+        },
+        "output": "12, 7",
+        "note": "Final output printed: 12, 7"
+      }
+    ],
+    "question": "What is the output printed by this pseudocode?",
+    "options": [
+      "12, 7",
+      "8, 5",
+      "13, 8",
+      "11, 6"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Iteration 1: x=5, y=2. Iteration 2: x=7, y=5. Iteration 3: x=12, y=7. Result is 12, 7."
+  },
+  {
+    "id": "TRACE-03",
+    "title": "Conditional Alternating Sum",
+    "description": "Trace even/odd branching logic affecting accumulator variable 's'.",
+    "difficulty": "Intermediate",
+    "code": "int s = 0;\nfor (int i = 1; i <= 5; i++) {\n    if (i % 2 == 0) {\n        s = s + (i * i);\n    } else {\n        s = s - i;\n    }\n}\nprint(s);",
+    "steps": [
+      {
+        "line": 1,
+        "vars": {
+          "s": 0
+        },
+        "note": "Initial: s=0"
+      },
+      {
+        "line": 2,
+        "vars": {
+          "s": 0,
+          "i": 1
+        },
+        "cond": "i <= 5 is true",
+        "note": "Loop i=1"
+      },
+      {
+        "line": 3,
+        "vars": {
+          "s": 0,
+          "i": 1
+        },
+        "cond": "1 % 2 == 0 is false",
+        "note": "Odd number, goes to else branch"
+      },
+      {
+        "line": 6,
+        "vars": {
+          "s": -1,
+          "i": 1
+        },
+        "note": "s = 0 - 1 = -1"
+      },
+      {
+        "line": 2,
+        "vars": {
+          "s": -1,
+          "i": 2
+        },
+        "cond": "i <= 5 is true",
+        "note": "Loop i=2"
+      },
+      {
+        "line": 3,
+        "vars": {
+          "s": -1,
+          "i": 2
+        },
+        "cond": "2 % 2 == 0 is true",
+        "note": "Even number, takes if branch"
+      },
+      {
+        "line": 4,
+        "vars": {
+          "s": 3,
+          "i": 2
+        },
+        "note": "s = -1 + (2*2) = 3"
+      },
+      {
+        "line": 2,
+        "vars": {
+          "s": 3,
+          "i": 3
+        },
+        "cond": "i <= 5 is true",
+        "note": "Loop i=3"
+      },
+      {
+        "line": 3,
+        "vars": {
+          "s": 3,
+          "i": 3
+        },
+        "cond": "3 % 2 == 0 is false",
+        "note": "Odd number, takes else"
+      },
+      {
+        "line": 6,
+        "vars": {
+          "s": 0,
+          "i": 3
+        },
+        "note": "s = 3 - 3 = 0"
+      },
+      {
+        "line": 2,
+        "vars": {
+          "s": 0,
+          "i": 4
+        },
+        "cond": "i <= 5 is true",
+        "note": "Loop i=4"
+      },
+      {
+        "line": 3,
+        "vars": {
+          "s": 0,
+          "i": 4
+        },
+        "cond": "4 % 2 == 0 is true",
+        "note": "Even number, takes if"
+      },
+      {
+        "line": 4,
+        "vars": {
+          "s": 16,
+          "i": 4
+        },
+        "note": "s = 0 + (4*4) = 16"
+      },
+      {
+        "line": 2,
+        "vars": {
+          "s": 16,
+          "i": 5
+        },
+        "cond": "i <= 5 is true",
+        "note": "Loop i=5"
+      },
+      {
+        "line": 3,
+        "vars": {
+          "s": 16,
+          "i": 5
+        },
+        "cond": "5 % 2 == 0 is false",
+        "note": "Odd number, takes else"
+      },
+      {
+        "line": 6,
+        "vars": {
+          "s": 11,
+          "i": 5
+        },
+        "note": "s = 16 - 5 = 11"
+      },
+      {
+        "line": 2,
+        "vars": {
+          "s": 11,
+          "i": 6
+        },
+        "cond": "i <= 5 is false",
+        "note": "Loop terminates"
+      },
+      {
+        "line": 9,
+        "vars": {
+          "s": 11
+        },
+        "output": "11",
+        "note": "Final printed output: 11"
+      }
+    ],
+    "question": "What is the final value of s printed?",
+    "options": [
+      "8",
+      "11",
+      "15",
+      "20"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Calculates: -1 + 4 - 3 + 16 - 5 = 11."
+  }
+]
