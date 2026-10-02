@@ -1,7 +1,7 @@
 {
-  "name": "infosysmock",
+  "name": "hitmocksite",
   "version": "1.0.0",
-  "description": "",
+  "description": "Infosys System Engineer Hiring Assessment Preparation Platform",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -12,15 +12,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/csemllabmail-eng/InfosysMock.git"
+    "url": "git+https://github.com/Subha12125/HITMockSite.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["infosys", "system-engineer", "mock-test", "aptitude"],
+  "author": "Subha12125",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/csemllabmail-eng/InfosysMock/issues"
-  },
-  "homepage": "https://github.com/csemllabmail-eng/InfosysMock#readme",
+  "homepage": "https://github.com/Subha12125/HITMockSite#readme",
   "dependencies": {
     "canvas-confetti": "^1.9.4",
     "cors": "^2.8.6",
