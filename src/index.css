@@ -4,14 +4,14 @@
 
 @layer base {
   body {
-    @apply antialiased text-slate-800 dark:text-slate-100 bg-slate-50 dark:bg-slate-950 font-sans;
+    @apply antialiased text-slate-800 dark:text-slate-100 bg-[#f8fafc] dark:bg-[#090e17] font-sans;
   }
 }
 
-/* Custom scrollbar */
+/* Custom scrollbar - refined and understated */
 ::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
+  width: 5px;
+  height: 5px;
 }
 ::-webkit-scrollbar-track {
   background: transparent;
@@ -23,38 +23,42 @@
   @apply bg-slate-400 dark:bg-slate-600;
 }
 
-/* Glassmorphism and Card shadows */
-.glass-card {
-  @apply bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border border-slate-200/80 dark:border-slate-800 rounded-2xl shadow-sm hover:shadow-md transition-all;
+/* Professional Educational Cards - solid, crisp, high legibility */
+.glass-card,
+.edu-card {
+  @apply bg-white dark:bg-[#0d1522] border border-slate-200 dark:border-slate-800 rounded-lg shadow-sm transition-colors;
 }
 
+.edu-card-interactive {
+  @apply bg-white dark:bg-[#0d1522] border border-slate-200 dark:border-slate-800 rounded-lg shadow-sm hover:border-slate-300 dark:hover:border-slate-700 transition-colors;
+}
+
+/* Academic Blueprint border accent */
 .gradient-border {
   position: relative;
-  border-radius: 1rem;
+  border-radius: 0.75rem;
+  border: 1px solid #e2e8f0;
 }
-.gradient-border::before {
-  content: '';
-  position: absolute;
-  inset: -1px;
-  border-radius: inherit;
-  padding: 1px;
-  background: linear-gradient(135deg, #3b82f6, #8b5cf6, #06b6d4);
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  pointer-events: none;
+.dark .gradient-border {
+  border-color: #1e293b;
 }
 
-/* Code highlight */
+/* Formal Assessment & Code blocks */
 .code-block {
   font-family: 'Fira Code', Consolas, monospace;
 }
 
-/* Pulse indicator */
+/* CBT Exam question paper texture */
+.exam-paper {
+  @apply bg-white dark:bg-[#0d1522] border border-slate-200 dark:border-slate-800 rounded-xl shadow-sm;
+}
+
+/* Subtle focus indicator */
 @keyframes softPulse {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.85; transform: scale(1.03); }
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.75; }
 }
 .animate-soft-pulse {
   animation: softPulse 2.5s infinite ease-in-out;
 }
+

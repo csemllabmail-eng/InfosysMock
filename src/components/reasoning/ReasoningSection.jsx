@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { 
-  BrainCircuit, Users, Building2, HelpCircle, 
-  Sparkles, CheckCircle2, XCircle, RotateCcw, 
-  ArrowRight, Bookmark, BookmarkCheck, Lightbulb, 
-  Layers, Shuffle, Check, Filter, Clock, Zap, Play, ChevronRight, Award
-} from 'lucide-react';
+  RiBrainLine, RiGroupLine, RiBuilding2Line, RiQuestionLine, 
+  RiLightbulbLine, RiCheckboxCircleLine, RiCloseCircleLine, RiRestartLine, 
+  RiArrowRightLine, RiBookmarkLine, RiBookmarkFill, 
+  RiStackLine, RiShuffleLine, RiCheckLine, RiFilter3Line, RiTimeLine, RiSpeedLine, RiPlayLine, RiArrowRightSLine, RiAwardLine
+} from '@remixicon/react';
 import { 
   fetchQuestions, fetchInteractivePuzzles, 
   toggleBookmark, isQuestionBookmarked, 
@@ -468,7 +468,7 @@ export default function ReasoningSection() {
         <div>
           <div className="flex items-center gap-2 mb-1.5">
             <div className="p-2 rounded-xl bg-amber-500 text-white shadow-md shadow-amber-500/25">
-              <BrainCircuit className="w-5 h-5" />
+              <RiBrainLine className="w-5 h-5" />
             </div>
             <h1 className="text-xl sm:text-2xl font-black text-slate-900 dark:text-white">
               Logical Reasoning Practice
@@ -489,7 +489,7 @@ export default function ReasoningSection() {
               onClick={startRetryMode}
               className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-amber-50 dark:bg-amber-950/60 border border-amber-300 dark:border-amber-800 text-amber-700 dark:text-amber-300 text-xs font-bold hover:bg-amber-100 transition-colors cursor-pointer"
             >
-              <RotateCcw className="w-3.5 h-3.5" />
+              <RiRestartLine className="w-3.5 h-3.5" />
               Retry Mistakes ({incorrectQuestions.length})
             </button>
           )}
@@ -506,18 +506,18 @@ export default function ReasoningSection() {
           <button
             onClick={() => startSpeedTrainer(120)}
             disabled={isSpeedTrainerActive}
-            className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-600 hover:to-orange-700 text-white font-bold text-xs shadow-md shadow-amber-500/20 transition-all cursor-pointer disabled:opacity-50"
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded bg-amber-600 hover:bg-amber-700 text-white font-medium text-xs transition-colors cursor-pointer disabled:opacity-50"
           >
-            <Zap className="w-3.5 h-3.5" />
+            <RiSpeedLine className="w-3.5 h-3.5" />
             Speed Drill (2m)
           </button>
 
-          <div className="flex items-center gap-1 p-1 bg-slate-100 dark:bg-slate-800 rounded-xl">
+          <div className="flex items-center gap-1 p-0.5 bg-slate-100 dark:bg-slate-800 rounded">
             <button
               onClick={() => setActiveTab('practice')}
-              className={`px-3 py-1 rounded-lg text-xs font-bold transition-colors cursor-pointer ${
+              className={`px-3 py-1 rounded text-xs font-medium transition-colors cursor-pointer ${
                 activeTab === 'practice'
-                  ? 'bg-white dark:bg-slate-900 text-amber-600 dark:text-amber-400 shadow-xs'
+                  ? 'bg-white dark:bg-slate-900 text-slate-900 dark:text-white font-semibold shadow-xs'
                   : 'text-slate-600 dark:text-slate-400'
               }`}
             >
@@ -525,9 +525,9 @@ export default function ReasoningSection() {
             </button>
             <button
               onClick={() => setActiveTab('puzzles')}
-              className={`px-3 py-1 rounded-lg text-xs font-bold transition-colors cursor-pointer ${
+              className={`px-3 py-1 rounded text-xs font-medium transition-colors cursor-pointer ${
                 activeTab === 'puzzles'
-                  ? 'bg-white dark:bg-slate-900 text-amber-600 dark:text-amber-400 shadow-xs'
+                  ? 'bg-white dark:bg-slate-900 text-slate-900 dark:text-white font-semibold shadow-xs'
                   : 'text-slate-600 dark:text-slate-400'
               }`}
             >
@@ -541,19 +541,19 @@ export default function ReasoningSection() {
       {activeTab === 'practice' && (
         <div className="space-y-6">
           
-          {/* Speed Trainer Active Overlay/Banner */}
+          {/* Speed Trainer Active Banner */}
           {isSpeedTrainerActive && (
-            <div className="glass-card p-4 bg-gradient-to-r from-amber-500/10 via-orange-500/10 to-amber-500/10 border-amber-400 dark:border-amber-600 flex items-center justify-between animate-pulse">
-              <div className="flex items-center gap-3">
-                <div className="p-2 rounded-xl bg-amber-500 text-white animate-bounce">
-                  <Clock className="w-4 h-4" />
+            <div className="p-3.5 rounded bg-amber-50 dark:bg-amber-950/40 border border-amber-200 dark:border-amber-800 flex items-center justify-between">
+              <div className="flex items-center gap-2.5">
+                <div className="p-1.5 rounded bg-amber-600 text-white">
+                  <RiTimeLine className="w-4 h-4" />
                 </div>
                 <div>
-                  <h4 className="text-sm font-extrabold text-amber-900 dark:text-amber-200">
-                    Reasoning Speed Drill in Progress!
+                  <h4 className="text-xs font-bold text-amber-900 dark:text-amber-200">
+                    Reasoning Speed Drill in Progress
                   </h4>
-                  <p className="text-xs text-slate-500 dark:text-slate-400">
-                    Solve questions as fast as possible. Selecting an answer immediately advances.
+                  <p className="text-[11px] text-slate-500 dark:text-slate-400">
+                    Selecting an answer immediately advances to the next question.
                   </p>
                 </div>
               </div>
@@ -581,7 +581,7 @@ export default function ReasoningSection() {
           {speedTrainerFinished && (
             <div className="glass-card p-6 border-emerald-400 dark:border-emerald-600 bg-emerald-50/50 dark:bg-emerald-950/20 text-center space-y-4">
               <div className="w-12 h-12 mx-auto rounded-full bg-emerald-500 text-white flex items-center justify-center shadow-lg">
-                <Award className="w-6 h-6" />
+                <RiAwardLine className="w-6 h-6" />
               </div>
               <h3 className="text-xl font-black text-slate-900 dark:text-white">
                 Speed Drill Completed!
@@ -627,7 +627,7 @@ export default function ReasoningSection() {
           <div className="glass-card p-5 space-y-4">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-2">
-                <Filter className="w-4 h-4 text-amber-500" />
+                <RiFilter3Line className="w-4 h-4 text-amber-500" />
                 <span className="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">
                   Select Reasoning Topic (18 Specialized Modules)
                 </span>
@@ -744,7 +744,7 @@ export default function ReasoningSection() {
                     onClick={() => setSelectedDifficulty(lvl)}
                     className={`px-2.5 py-1 rounded-full text-xs font-semibold transition-colors cursor-pointer ${
                       selectedDifficulty === lvl
-                        ? 'bg-slate-900 text-white dark:bg-white dark:text-slate-900 shadow-xs'
+                        ? 'bg-slate-900 text-white dark:bg-white dark:text-slate-900 shadow-sm'
                         : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300'
                     }`}
                   >
@@ -800,7 +800,7 @@ export default function ReasoningSection() {
                     }`}
                     title={bookmarked ? "Bookmarked" : "Bookmark this question"}
                   >
-                    {bookmarked ? <BookmarkCheck className="w-4 h-4" /> : <Bookmark className="w-4 h-4" />}
+                    {bookmarked ? <RiBookmarkFill className="w-4 h-4" /> : <RiBookmarkLine className="w-4 h-4" />}
                   </button>
                 </div>
               </div>
@@ -840,8 +840,8 @@ export default function ReasoningSection() {
                         {letter}
                       </div>
                       <span className="flex-1 pt-0.5 leading-relaxed">{opt}</span>
-                      {isAnswerSubmitted && isCorrect && <CheckCircle2 className="w-5 h-5 text-emerald-600 shrink-0" />}
-                      {isAnswerSubmitted && isSelected && !isCorrect && <XCircle className="w-5 h-5 text-rose-500 shrink-0" />}
+                      {isAnswerSubmitted && isCorrect && <RiCheckboxCircleLine className="w-5 h-5 text-emerald-600 shrink-0" />}
+                      {isAnswerSubmitted && isSelected && !isCorrect && <RiCloseCircleLine className="w-5 h-5 text-rose-500 shrink-0" />}
                     </button>
                   );
                 })}
@@ -888,7 +888,7 @@ export default function ReasoningSection() {
                 {showExplanation && (
                   <div className="p-5 rounded-2xl bg-amber-50/60 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-800/60 space-y-2">
                     <div className="flex items-center gap-1.5 text-xs font-bold text-amber-700 dark:text-amber-300">
-                      <Lightbulb className="w-4 h-4 text-amber-500" />
+                      <RiLightbulbLine className="w-4 h-4 text-amber-500" />
                       <span>Step-by-Step Logical Solution & Shortcut:</span>
                     </div>
                     <p className="text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed whitespace-pre-line">
@@ -944,7 +944,7 @@ export default function ReasoningSection() {
             {/* Clues Checklist */}
             <div className="space-y-2">
               <div className="text-xs font-bold text-slate-700 dark:text-slate-300 flex items-center gap-1.5">
-                <Lightbulb className="w-3.5 h-3.5 text-amber-500" />
+                <RiLightbulbLine className="w-3.5 h-3.5 text-amber-500" />
                 <span>Condition Constraints & Clues:</span>
               </div>
               <div className="space-y-2">
@@ -985,7 +985,7 @@ export default function ReasoningSection() {
                     <button
                       key={item}
                       onClick={() => setSelectedItemToPlace(selectedItemToPlace === item ? null : item)}
-                      className={`px-3.5 py-2 rounded-xl text-xs font-extrabold transition-all cursor-pointer shadow-xs ${
+                      className={`px-3.5 py-2 rounded-xl text-xs font-extrabold transition-all cursor-pointer shadow-sm ${
                         selectedItemToPlace === item 
                           ? 'bg-amber-500 text-white ring-4 ring-amber-300 dark:ring-amber-800 scale-105' 
                           : 'bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-600 text-slate-800 dark:text-slate-200 hover:border-amber-400'
@@ -996,7 +996,7 @@ export default function ReasoningSection() {
                   ))}
                   {unassignedItems.length === 0 && (
                     <span className="text-xs text-emerald-600 font-semibold flex items-center gap-1">
-                      <CheckCircle2 className="w-4 h-4" /> All candidates assigned! Click 'Verify Solution' below.
+                      <RiCheckboxCircleLine className="w-4 h-4" /> All candidates assigned! Click 'Verify Solution' below.
                     </span>
                   )}
                 </div>
@@ -1025,7 +1025,7 @@ export default function ReasoningSection() {
                         </span>
                         
                         {occupant ? (
-                          <div className="w-12 h-12 rounded-xl bg-gradient-to-tr from-amber-500 to-orange-500 text-white flex items-center justify-center font-black text-lg shadow-sm">
+                          <div className="w-10 h-10 rounded bg-amber-600 text-white flex items-center justify-center font-bold text-base shadow-xs">
                             {occupant}
                           </div>
                         ) : (
@@ -1115,14 +1115,14 @@ export default function ReasoningSection() {
 
                           <div className="flex items-center gap-3">
                             {occupant ? (
-                              <div className="px-4 py-1.5 rounded-xl bg-gradient-to-r from-amber-500 to-orange-500 text-white font-extrabold text-xs shadow-xs">
+                              <div className="px-3 py-1 rounded bg-amber-600 text-white font-bold text-xs shadow-xs">
                                 {occupant}
                               </div>
                             ) : (
                               <span className="text-xs text-slate-400 font-medium">Click to Assign</span>
                             )}
-                            {puzzleChecked && isCorrect && <CheckCircle2 className="w-4 h-4 text-emerald-600" />}
-                            {puzzleChecked && isWrong && <XCircle className="w-4 h-4 text-rose-500" />}
+                            {puzzleChecked && isCorrect && <RiCheckboxCircleLine className="w-4 h-4 text-emerald-600" />}
+                            {puzzleChecked && isWrong && <RiCloseCircleLine className="w-4 h-4 text-rose-500" />}
                           </div>
                         </div>
                       );
@@ -1139,7 +1139,7 @@ export default function ReasoningSection() {
                   onClick={() => initPuzzle(currentPuzzle)}
                   className="flex items-center gap-1.5 px-4 py-2 rounded-xl border border-slate-200 dark:border-slate-700 text-xs font-bold text-slate-600 dark:text-slate-300 hover:bg-slate-100 cursor-pointer"
                 >
-                  <RotateCcw className="w-3.5 h-3.5" />
+                  <RiRestartLine className="w-3.5 h-3.5" />
                   Reset Layout
                 </button>
 
@@ -1147,7 +1147,7 @@ export default function ReasoningSection() {
                   onClick={checkPuzzleAnswer}
                   className="flex items-center gap-1.5 px-6 py-2.5 rounded-xl bg-amber-600 hover:bg-amber-700 text-white font-black text-xs shadow-md shadow-amber-500/25 cursor-pointer"
                 >
-                  <Check className="w-4 h-4" />
+                  <RiCheckLine className="w-4 h-4" />
                   Verify Solution
                 </button>
               </div>
@@ -1162,12 +1162,12 @@ export default function ReasoningSection() {
                   <div className="font-bold mb-1 flex items-center gap-1.5">
                     {isPuzzleSolvedCorrectly ? (
                       <>
-                        <CheckCircle2 className="w-4 h-4 text-emerald-600" />
+                        <RiCheckboxCircleLine className="w-4 h-4 text-emerald-600" />
                         <span>Flawless deduction! Perfect arrangement.</span>
                       </>
                     ) : (
                       <>
-                        <XCircle className="w-4 h-4 text-rose-600" />
+                        <RiCloseCircleLine className="w-4 h-4 text-rose-600" />
                         <span>Arrangement does not satisfy all constraints.</span>
                       </>
                     )}

@@ -1,13 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import { 
-  FileCheck2, PlayCircle, Clock, Award, 
-  Settings2, Sparkles, RotateCcw, Shuffle, 
-  Sliders, ArrowRight, Layers, CheckCircle2
-} from 'lucide-react';
+  RiFileCheckLine, 
+  RiPlayCircleLine, 
+  RiTimeLine, 
+  RiSettings4Line, 
+  RiRestartLine, 
+  RiShuffleLine, 
+  RiEqualizerLine, 
+  RiCheckboxCircleLine 
+} from '@remixicon/react';
 import { 
-  fetchMockTests, fetchMockTestDetails, 
-  generateCustomTest, generateMistakesTest, 
-  getAllQuestions 
+  fetchMockTests, 
+  fetchMockTestDetails, 
+  generateCustomTest, 
+  generateMistakesTest 
 } from '../../services/api';
 
 export default function MockTestsSection({ onLaunchTest }) {
@@ -66,17 +72,24 @@ export default function MockTestsSection({ onLaunchTest }) {
 
   const handleStartMistakes = async () => {
     const mistakesTest = await generateMistakesTest();
+    if (!mistakesTest) {
+      alert("No incorrect questions recorded yet. Complete practice sessions or tests to populate your mistakes bank.");
+      return;
+    }
     onLaunchTest(mistakesTest);
   };
 
   const handleStartRandomBlitz = async () => {
     const blitz = await generateCustomTest({
-      sections: [],
+      sections: [
+        "Quantitative Aptitude", "Verbal Ability", 
+        "Logical Reasoning & Puzzles", "Pseudocode & Programming Logic"
+      ],
       questionCount: 15,
       difficulty: "All",
-      timeLimitMinutes: 15
+      timeLimitMinutes: 20
     });
-    blitz.title = "15-Question Random Speed Blitz";
+    blitz.title = "15-Question Speed Drill";
     onLaunchTest(blitz);
   };
 
@@ -87,74 +100,71 @@ export default function MockTestsSection({ onLaunchTest }) {
   };
 
   return (
-    <div className="space-y-8 pb-12">
+    <div className="space-y-6 pb-12">
       
-      {/* Top Banner */}
-      <div className="glass-card p-6 border-brand-200/50 dark:border-brand-900/50 flex flex-col md:flex-row md:items-center justify-between gap-4">
+      {/* Page Header */}
+      <div className="bg-white dark:bg-[#0d1522] border border-slate-200 dark:border-slate-800 rounded-lg p-5 flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
-          <div className="flex items-center gap-2 mb-1.5">
-            <div className="p-2 rounded-xl bg-brand-600 text-white shadow-md shadow-brand-500/25">
-              <FileCheck2 className="w-5 h-5" />
-            </div>
-            <h1 className="text-xl sm:text-2xl font-black text-slate-900 dark:text-white">
-              Infosys SE Mock Test Engine
+          <div className="flex items-center gap-2 mb-1">
+            <h1 className="text-xl font-bold text-slate-900 dark:text-white">
+              Mock Examination Series
             </h1>
-            <span className="text-xs font-semibold px-2 py-0.5 rounded-full bg-brand-100 dark:bg-brand-950 text-brand-700 dark:text-brand-300">
+            <span className="text-xs font-semibold px-2 py-0.5 rounded bg-brand-50 dark:bg-brand-950/80 text-brand-700 dark:text-brand-300 border border-brand-200 dark:border-brand-800">
               15 Full Blueprints
             </span>
           </div>
-          <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400">
-            54 questions · 90 minutes · Reasoning, Quantitative, Verbal & Pseudocode simulation.
+          <p className="text-xs text-slate-500 dark:text-slate-400">
+            Standard 54-question, 90-minute timed simulation matching the Infosys SE hiring pattern.
           </p>
         </div>
 
-        {/* Quick Launch Shortcuts */}
-        <div className="flex flex-wrap items-center gap-2">
+        {/* Quick Launch Practice Drills */}
+        <div className="flex items-center gap-2">
           <button
             onClick={handleStartMistakes}
-            className="flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-amber-50 dark:bg-amber-950/60 border border-amber-300 dark:border-amber-800 text-amber-700 dark:text-amber-300 text-xs font-bold hover:bg-amber-100 transition-colors cursor-pointer"
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded bg-amber-50 dark:bg-amber-950/40 border border-amber-200 dark:border-amber-800 text-amber-800 dark:text-amber-300 text-xs font-semibold hover:bg-amber-100 transition-colors cursor-pointer"
           >
-            <RotateCcw className="w-3.5 h-3.5" />
-            Previous Mistakes Drill
+            <RiRestartLine className="w-3.5 h-3.5" />
+            Mistakes Re-test
           </button>
           <button
             onClick={handleStartRandomBlitz}
-            className="flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-purple-50 dark:bg-purple-950/60 border border-purple-300 dark:border-purple-800 text-purple-700 dark:text-purple-300 text-xs font-bold hover:bg-purple-100 transition-colors cursor-pointer"
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-800 dark:text-slate-200 text-xs font-semibold hover:bg-slate-200 dark:hover:bg-slate-750 transition-colors cursor-pointer"
           >
-            <Shuffle className="w-3.5 h-3.5" />
-            15-Question Blitz
+            <RiShuffleLine className="w-3.5 h-3.5" />
+            15-Question Rapid Drill
           </button>
         </div>
       </div>
 
-      {/* Mode switcher tabs */}
-      <div className="flex items-center gap-2 border-b border-slate-200 dark:border-slate-800 pb-3">
+      {/* Mode Switcher Tabs */}
+      <div className="flex items-center gap-2 border-b border-slate-200 dark:border-slate-800 pb-2">
         <button
           onClick={() => setActiveMode('full')}
-          className={`px-4 py-2 rounded-xl text-xs font-bold transition-colors cursor-pointer ${
+          className={`px-3 py-1.5 rounded text-xs font-semibold transition-colors cursor-pointer ${
             activeMode === 'full' 
-              ? 'bg-brand-600 text-white shadow-xs' 
-              : 'text-slate-600 dark:text-slate-400 hover:bg-slate-100'
+              ? 'bg-brand-600 text-white' 
+              : 'text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800'
           }`}
         >
           Full-Length Mock Tests (15)
         </button>
         <button
           onClick={() => setActiveMode('sectional')}
-          className={`px-4 py-2 rounded-xl text-xs font-bold transition-colors cursor-pointer ${
+          className={`px-3 py-1.5 rounded text-xs font-semibold transition-colors cursor-pointer ${
             activeMode === 'sectional' 
-              ? 'bg-brand-600 text-white shadow-xs' 
-              : 'text-slate-600 dark:text-slate-400 hover:bg-slate-100'
+              ? 'bg-brand-600 text-white' 
+              : 'text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800'
           }`}
         >
           Sectional Timed Tests
         </button>
         <button
           onClick={() => setActiveMode('custom')}
-          className={`px-4 py-2 rounded-xl text-xs font-bold transition-colors cursor-pointer ${
+          className={`px-3 py-1.5 rounded text-xs font-semibold transition-colors cursor-pointer ${
             activeMode === 'custom' 
-              ? 'bg-brand-600 text-white shadow-xs' 
-              : 'text-slate-600 dark:text-slate-400 hover:bg-slate-100'
+              ? 'bg-brand-600 text-white' 
+              : 'text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800'
           }`}
         >
           Custom Test Builder
@@ -163,57 +173,57 @@ export default function MockTestsSection({ onLaunchTest }) {
 
       {/* ================= 1. FULL MOCK TESTS ================= */}
       {activeMode === 'full' && (
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
           {mockTests.map((t, idx) => (
             <div
               key={t.id}
-              className="glass-card p-6 flex flex-col justify-between hover:border-brand-300 dark:hover:border-brand-700 transition-all group"
+              className="bg-white dark:bg-[#0d1522] border border-slate-200 dark:border-slate-800 rounded-lg p-4 flex flex-col justify-between hover:border-slate-300 dark:hover:border-slate-700 transition-colors shadow-xs"
             >
               <div>
-                <div className="flex items-center justify-between mb-3">
-                  <span className="text-[10px] font-extrabold px-2.5 py-1 rounded-full bg-brand-50 dark:bg-brand-950 text-brand-700 dark:text-brand-300 border border-brand-200 dark:border-brand-800">
-                    MOCK TEST #{idx + 1}
+                <div className="flex items-center justify-between mb-2">
+                  <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
+                    PAPER #{idx + 1}
                   </span>
-                  <span className="text-xs font-semibold text-slate-400 flex items-center gap-1">
-                    <Clock className="w-3.5 h-3.5" />
+                  <span className="text-xs font-medium text-slate-500 dark:text-slate-400 flex items-center gap-1">
+                    <RiTimeLine className="w-3.5 h-3.5" />
                     90 Mins
                   </span>
                 </div>
 
-                <h3 className="font-extrabold text-base text-slate-900 dark:text-white group-hover:text-brand-600 transition-colors">
+                <h3 className="font-bold text-sm text-slate-900 dark:text-white">
                   {t.title}
                 </h3>
-                <p className="text-xs text-slate-500 dark:text-slate-400 mt-1 mb-4 leading-relaxed">
+                <p className="text-xs text-slate-500 dark:text-slate-400 mt-1 mb-3 leading-relaxed line-clamp-2">
                   {t.description}
                 </p>
 
-                {/* Section counts */}
-                <div className="grid grid-cols-2 gap-2 text-[11px] p-3 rounded-xl bg-slate-50 dark:bg-slate-800/60 mb-5">
+                {/* Section breakdown */}
+                <div className="grid grid-cols-2 gap-2 text-[11px] p-2.5 rounded bg-slate-50 dark:bg-slate-800/60 mb-4 border border-slate-100 dark:border-slate-800/80">
                   <div>
-                    <span className="text-slate-400 block">Reasoning & Puzzles</span>
-                    <span className="font-bold text-slate-700 dark:text-slate-200">19 Questions</span>
+                    <span className="text-slate-400 block text-[10px]">Reasoning & Puzzles</span>
+                    <span className="font-semibold text-slate-700 dark:text-slate-200">19 Questions</span>
                   </div>
                   <div>
-                    <span className="text-slate-400 block">Quantitative Aptitude</span>
-                    <span className="font-bold text-slate-700 dark:text-slate-200">10 Questions</span>
+                    <span className="text-slate-400 block text-[10px]">Quantitative</span>
+                    <span className="font-semibold text-slate-700 dark:text-slate-200">10 Questions</span>
                   </div>
                   <div>
-                    <span className="text-slate-400 block">Verbal Ability</span>
-                    <span className="font-bold text-slate-700 dark:text-slate-200">20 Questions</span>
+                    <span className="text-slate-400 block text-[10px]">Verbal Ability</span>
+                    <span className="font-semibold text-slate-700 dark:text-slate-200">20 Questions</span>
                   </div>
                   <div>
-                    <span className="text-slate-400 block">Pseudocode Logic</span>
-                    <span className="font-bold text-slate-700 dark:text-slate-200">5 Questions</span>
+                    <span className="text-slate-400 block text-[10px]">Pseudocode</span>
+                    <span className="font-semibold text-slate-700 dark:text-slate-200">5 Questions</span>
                   </div>
                 </div>
               </div>
 
               <button
                 onClick={() => handleStartFullTest(t.id)}
-                className="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-bold text-xs shadow-md shadow-brand-500/25 transition-all cursor-pointer group-hover:scale-[1.01]"
+                className="w-full flex items-center justify-center gap-1.5 py-2 px-3 rounded bg-brand-600 hover:bg-brand-700 text-white font-medium text-xs transition-colors cursor-pointer"
               >
-                <PlayCircle className="w-4 h-4" />
-                <span>Start Full Exam #{idx + 1}</span>
+                <RiPlayCircleLine className="w-4 h-4" />
+                <span>Start Test</span>
               </button>
             </div>
           ))}
@@ -222,56 +232,56 @@ export default function MockTestsSection({ onLaunchTest }) {
 
       {/* ================= 2. SECTIONAL TIMED TESTS ================= */}
       {activeMode === 'sectional' && (
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {[
             {
               name: "Quantitative Aptitude",
               desc: "15 questions covering Percentages, Work-Time, Trains, Divisibility & Mixtures.",
               count: 15,
               time: 25,
-              color: "from-blue-600 to-cyan-600"
+              btnClass: "bg-brand-600 hover:bg-brand-700"
             },
             {
               name: "Verbal Ability",
               desc: "20 questions covering Grammar rules, Prepositions, Error Detection & Vocab.",
               count: 20,
               time: 25,
-              color: "from-purple-600 to-indigo-600"
+              btnClass: "bg-teal-700 hover:bg-teal-800"
             },
             {
               name: "Logical Reasoning & Puzzles",
               desc: "15 questions covering Seating Arrangements, Coding-Decoding, Clocks & Series.",
               count: 15,
               time: 25,
-              color: "from-amber-600 to-orange-600"
+              btnClass: "bg-amber-600 hover:bg-amber-700"
             },
             {
               name: "Pseudocode & Programming Logic",
               desc: "10 questions covering nested loops, bubble sort tracing, conditionals & operators.",
               count: 10,
               time: 15,
-              color: "from-emerald-600 to-teal-600"
+              btnClass: "bg-slate-800 hover:bg-slate-900"
             }
           ].map((sec, i) => (
-            <div key={i} className="glass-card p-6 flex flex-col justify-between">
+            <div key={i} className="bg-white dark:bg-[#0d1522] border border-slate-200 dark:border-slate-800 rounded-lg p-5 flex flex-col justify-between shadow-xs">
               <div>
                 <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400">
                   Targeted Sectional Drill
                 </span>
-                <h3 className="font-bold text-lg text-slate-900 dark:text-white mt-1">
+                <h3 className="font-bold text-base text-slate-900 dark:text-white mt-1">
                   {sec.name}
                 </h3>
                 <p className="text-xs text-slate-500 dark:text-slate-400 mt-1 mb-4 leading-relaxed">
                   {sec.desc}
                 </p>
 
-                <div className="flex items-center gap-4 text-xs font-semibold text-slate-600 dark:text-slate-300 mb-5">
+                <div className="flex items-center gap-4 text-xs font-semibold text-slate-600 dark:text-slate-300 mb-4">
                   <span className="flex items-center gap-1">
-                    <FileCheck2 className="w-3.5 h-3.5 text-brand-500" />
+                    <RiFileCheckLine className="w-3.5 h-3.5 text-slate-400" />
                     {sec.count} Questions
                   </span>
                   <span className="flex items-center gap-1">
-                    <Clock className="w-3.5 h-3.5 text-brand-500" />
+                    <RiTimeLine className="w-3.5 h-3.5 text-slate-400" />
                     {sec.time} Minutes
                   </span>
                 </div>
@@ -279,9 +289,9 @@ export default function MockTestsSection({ onLaunchTest }) {
 
               <button
                 onClick={() => handleStartSectional(sec.name, sec.count, sec.time)}
-                className={`w-full py-2.5 px-4 rounded-xl bg-gradient-to-r ${sec.color} text-white font-bold text-xs shadow-md transition-opacity hover:opacity-90 cursor-pointer`}
+                className={`w-full py-2 px-3 rounded ${sec.btnClass} text-white font-medium text-xs transition-colors cursor-pointer`}
               >
-                Launch {sec.name} Test
+                Start Sectional Test
               </button>
             </div>
           ))}
@@ -290,20 +300,20 @@ export default function MockTestsSection({ onLaunchTest }) {
 
       {/* ================= 3. CUSTOM TEST BUILDER ================= */}
       {activeMode === 'custom' && (
-        <div className="max-w-2xl mx-auto glass-card p-6 sm:p-8 space-y-6">
+        <div className="max-w-2xl mx-auto bg-white dark:bg-[#0d1522] border border-slate-200 dark:border-slate-800 rounded-lg p-6 space-y-5 shadow-xs">
           <div>
-            <h2 className="text-lg font-black text-slate-900 dark:text-white flex items-center gap-2">
-              <Sliders className="w-5 h-5 text-brand-600" />
+            <h2 className="text-base font-bold text-slate-900 dark:text-white flex items-center gap-2">
+              <RiEqualizerLine className="w-4 h-4 text-brand-600" />
               Configure Custom Test Blueprint
             </h2>
             <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
-              Select specific sections, custom question count, difficulty, and timer to tailor your practice session.
+              Select specific sections, question count, difficulty, and timer to build a personalized test.
             </p>
           </div>
 
           {/* Section Selection */}
           <div className="space-y-2">
-            <label className="text-xs font-bold text-slate-700 dark:text-slate-300">
+            <label className="text-xs font-semibold text-slate-700 dark:text-slate-300">
               1. Sections to Include
             </label>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
@@ -319,14 +329,14 @@ export default function MockTestsSection({ onLaunchTest }) {
                     key={sec}
                     type="button"
                     onClick={() => toggleCustomSection(sec)}
-                    className={`p-3 rounded-xl border text-xs font-semibold text-left flex items-center justify-between transition-colors ${
+                    className={`p-2.5 rounded border text-xs font-medium text-left flex items-center justify-between transition-colors cursor-pointer ${
                       isSelected 
-                        ? 'border-brand-500 bg-brand-50 dark:bg-brand-950/60 text-brand-900 dark:text-brand-200' 
+                        ? 'border-brand-600 bg-brand-50 dark:bg-brand-950/60 text-brand-900 dark:text-brand-200 font-semibold' 
                         : 'border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-400'
                     }`}
                   >
                     <span>{sec}</span>
-                    {isSelected && <CheckCircle2 className="w-4 h-4 text-brand-600 shrink-0" />}
+                    {isSelected && <RiCheckboxCircleLine className="w-4 h-4 text-brand-600 shrink-0" />}
                   </button>
                 );
               })}
@@ -335,9 +345,9 @@ export default function MockTestsSection({ onLaunchTest }) {
 
           {/* Number of Questions */}
           <div className="space-y-2">
-            <div className="flex justify-between text-xs font-bold text-slate-700 dark:text-slate-300">
+            <div className="flex justify-between text-xs font-semibold text-slate-700 dark:text-slate-300">
               <span>2. Question Count: {customCount} Questions</span>
-              <span className="text-slate-400">Range: 10 – 54</span>
+              <span className="text-slate-400 font-normal">Range: 10 – 54</span>
             </div>
             <input
               type="range"
@@ -350,56 +360,48 @@ export default function MockTestsSection({ onLaunchTest }) {
             />
           </div>
 
-          {/* Time Limit */}
-          <div className="space-y-2">
-            <div className="flex justify-between text-xs font-bold text-slate-700 dark:text-slate-300">
-              <span>3. Time Limit: {customDuration} Minutes</span>
-              <span className="text-slate-400">Range: 15 – 90</span>
+          {/* Difficulty and Duration */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className="space-y-1.5">
+              <label className="text-xs font-semibold text-slate-700 dark:text-slate-300">
+                3. Difficulty Level
+              </label>
+              <select
+                value={customDifficulty}
+                onChange={(e) => setCustomDifficulty(e.target.value)}
+                className="w-full text-xs p-2 rounded border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-800 dark:text-white"
+              >
+                <option value="All">All Levels (Balanced Blueprint)</option>
+                <option value="Easy">Easy (Foundation / Warmup)</option>
+                <option value="Medium">Medium (Actual Standard)</option>
+                <option value="Hard">Hard (High Difficulty)</option>
+              </select>
             </div>
-            <input
-              type="range"
-              min="15"
-              max="90"
-              step="5"
-              value={customDuration}
-              onChange={(e) => setCustomDuration(parseInt(e.target.value))}
-              className="w-full accent-brand-600 cursor-pointer"
-            />
-          </div>
 
-          {/* Difficulty */}
-          <div className="space-y-2">
-            <label className="text-xs font-bold text-slate-700 dark:text-slate-300">
-              4. Difficulty Filter
-            </label>
-            <div className="grid grid-cols-4 gap-2">
-              {['All', 'Beginner', 'Intermediate', 'Advanced'].map(diff => (
-                <button
-                  key={diff}
-                  type="button"
-                  onClick={() => setCustomDifficulty(diff)}
-                  className={`py-2 px-3 rounded-xl border text-xs font-bold transition-colors ${
-                    customDifficulty === diff 
-                      ? 'bg-slate-900 text-white dark:bg-white dark:text-slate-900' 
-                      : 'border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400'
-                  }`}
-                >
-                  {diff}
-                </button>
-              ))}
+            <div className="space-y-1.5">
+              <label className="text-xs font-semibold text-slate-700 dark:text-slate-300">
+                4. Timer (Minutes)
+              </label>
+              <input
+                type="number"
+                min="5"
+                max="120"
+                step="5"
+                value={customDuration}
+                onChange={(e) => setCustomDuration(parseInt(e.target.value) || 30)}
+                className="w-full text-xs p-2 rounded border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-800 dark:text-white"
+              />
             </div>
           </div>
 
-          <div className="pt-4 border-t border-slate-100 dark:border-slate-800">
-            <button
-              onClick={handleStartCustom}
-              disabled={customSections.length === 0 || isBuildingCustom}
-              className="w-full py-3.5 px-4 rounded-xl bg-brand-600 hover:bg-brand-700 disabled:opacity-50 text-white font-bold text-xs shadow-md shadow-brand-500/25 transition-all cursor-pointer flex items-center justify-center gap-2"
-            >
-              <PlayCircle className="w-4 h-4" />
-              <span>Generate & Launch Custom Test</span>
-            </button>
-          </div>
+          {/* Single Launch Action Button */}
+          <button
+            onClick={handleStartCustom}
+            disabled={isBuildingCustom || customSections.length === 0}
+            className="w-full py-2.5 px-4 rounded bg-brand-600 hover:bg-brand-700 text-white font-medium text-xs transition-colors cursor-pointer disabled:opacity-50"
+          >
+            {isBuildingCustom ? "Generating Custom Test..." : `Launch Custom Test (${customCount} Qs · ${customDuration} Mins)`}
+          </button>
         </div>
       )}
 

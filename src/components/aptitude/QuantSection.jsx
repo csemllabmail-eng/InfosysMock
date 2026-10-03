@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { 
-  Calculator, Zap, Clock, CheckCircle2, XCircle, 
-  Bookmark, BookmarkCheck, ArrowRight, RotateCcw, 
-  HelpCircle, Sparkles, Filter, ChevronRight, Play, Check
-} from 'lucide-react';
+  RiCalculatorLine, RiSpeedLine, RiTimeLine, RiCheckboxCircleLine, RiCloseCircleLine, 
+  RiBookmarkLine, RiBookmarkFill, RiArrowRightLine, RiRestartLine, 
+  RiQuestionLine, RiLightbulbLine, RiFilter3Line, RiArrowRightSLine, RiPlayLine, RiCheckLine 
+} from '@remixicon/react';
 import { 
   fetchQuestions, toggleBookmark, isQuestionBookmarked, 
   logPracticeSession 
@@ -211,7 +211,7 @@ export default function QuantSection() {
         <div>
           <div className="flex items-center gap-2 mb-1.5">
             <div className="p-2 rounded-xl bg-blue-500 text-white shadow-md shadow-blue-500/25">
-              <Calculator className="w-5 h-5" />
+              <RiCalculatorLine className="w-5 h-5" />
             </div>
             <h1 className="text-xl sm:text-2xl font-black text-slate-900 dark:text-white">
               Quantitative Aptitude
@@ -232,7 +232,7 @@ export default function QuantSection() {
               onClick={startRetryMode}
               className="flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-amber-50 dark:bg-amber-950/60 border border-amber-300 dark:border-amber-800 text-amber-700 dark:text-amber-300 text-xs font-bold hover:bg-amber-100 transition-colors cursor-pointer"
             >
-              <RotateCcw className="w-3.5 h-3.5" />
+              <RiRestartLine className="w-3.5 h-3.5" />
               Retry Mistakes ({incorrectQuestions.length})
             </button>
           )}
@@ -248,41 +248,41 @@ export default function QuantSection() {
 
           <button
             onClick={() => startSpeedTrainer(120)}
-            className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white text-xs font-bold shadow-md shadow-blue-500/25 transition-all cursor-pointer"
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded bg-brand-600 hover:bg-brand-700 text-white text-xs font-medium transition-colors cursor-pointer"
           >
-            <Zap className="w-4 h-4 fill-white" />
+            <RiSpeedLine className="w-3.5 h-3.5" />
             <span>Launch Speed Trainer (2 Min)</span>
           </button>
         </div>
       </div>
 
-      {/* Speed Trainer Modal / Banner when active */}
+      {/* Speed Trainer Banner when active */}
       {isSpeedTrainerActive && (
-        <div className="p-5 rounded-2xl bg-gradient-to-r from-blue-700 via-indigo-700 to-cyan-700 text-white shadow-lg animate-soft-pulse">
+        <div className="p-4 rounded-lg bg-[#0f2038] dark:bg-[#091322] border border-slate-700 text-white shadow-xs">
           <div className="flex flex-wrap items-center justify-between gap-4">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-white/20 flex items-center justify-center font-bold text-lg">
-                ⚡
+            <div className="flex items-center gap-2.5">
+              <div className="w-8 h-8 rounded bg-slate-800 flex items-center justify-center">
+                <RiSpeedLine className="w-4 h-4 text-amber-400" />
               </div>
               <div>
-                <h3 className="font-extrabold text-base">Aptitude Speed Trainer Active</h3>
-                <p className="text-xs text-white/80">Select your answer immediately — questions advance automatically!</p>
+                <h3 className="font-bold text-sm text-white">Aptitude Speed Trainer Active</h3>
+                <p className="text-xs text-slate-300">Select your answer immediately — questions advance automatically.</p>
               </div>
             </div>
 
-            <div className="flex items-center gap-4 text-xs font-semibold">
-              <div className="px-3 py-1.5 rounded-xl bg-white/20 backdrop-blur-md">
-                Timer: <span className="font-mono text-base font-bold ml-1">{speedTimeLeft}s</span>
+            <div className="flex items-center gap-3 text-xs">
+              <div className="px-2.5 py-1 rounded bg-slate-800 border border-slate-700">
+                Timer: <span className="font-mono font-bold ml-1">{speedTimeLeft}s</span>
               </div>
-              <div className="px-3 py-1.5 rounded-xl bg-white/20 backdrop-blur-md">
-                Solved: <span className="text-base font-bold ml-1">{speedSolvedCount}</span>
+              <div className="px-2.5 py-1 rounded bg-slate-800 border border-slate-700">
+                Solved: <span className="font-bold ml-1">{speedSolvedCount}</span>
               </div>
-              <div className="px-3 py-1.5 rounded-xl bg-white/20 backdrop-blur-md">
-                QPM: <span className="text-base font-bold ml-1">{qpm}</span>
+              <div className="px-2.5 py-1 rounded bg-slate-800 border border-slate-700">
+                QPM: <span className="font-bold ml-1">{qpm}</span>
               </div>
               <button
                 onClick={finishSpeedTrainer}
-                className="px-3 py-1.5 rounded-xl bg-rose-500 hover:bg-rose-600 font-bold transition-colors cursor-pointer"
+                className="px-2.5 py-1 rounded bg-rose-600 hover:bg-rose-700 text-white font-medium transition-colors cursor-pointer"
               >
                 End Drill
               </button>
@@ -293,15 +293,15 @@ export default function QuantSection() {
 
       {/* Speed Trainer Results Modal */}
       {speedTrainerFinished && (
-        <div className="glass-card p-6 border-cyan-400 bg-gradient-to-br from-white via-cyan-50/20 to-blue-50/20 dark:from-slate-900 dark:via-slate-850 dark:to-slate-900">
-          <div className="flex items-center justify-between mb-4">
-            <h3 className="font-extrabold text-base text-slate-900 dark:text-white flex items-center gap-2">
-              <Zap className="w-5 h-5 text-cyan-500 fill-cyan-500" />
+        <div className="bg-white dark:bg-[#0d1522] border border-slate-200 dark:border-slate-800 rounded-lg p-5 shadow-xs">
+          <div className="flex items-center justify-between mb-3">
+            <h3 className="font-bold text-sm text-slate-900 dark:text-white flex items-center gap-2">
+              <RiSpeedLine className="w-4 h-4 text-brand-600" />
               Speed Trainer Results
             </h3>
             <button
               onClick={() => setSpeedTrainerFinished(false)}
-              className="text-xs font-bold text-slate-400 hover:text-slate-600 dark:hover:text-slate-200"
+              className="text-xs font-semibold text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 cursor-pointer"
             >
               ✕ Close
             </button>
@@ -324,7 +324,7 @@ export default function QuantSection() {
             </div>
             <div className="p-3 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-center">
               <span className="text-xs text-slate-400">Avg Time / Q</span>
-              <div className="text-xl font-black text-purple-500">
+              <div className="text-xl font-black text-brand-600 dark:text-brand-400">
                 {speedSolvedCount > 0 ? ((speedDuration - speedTimeLeft) / speedSolvedCount).toFixed(1) : 0}s
               </div>
             </div>
@@ -346,7 +346,7 @@ export default function QuantSection() {
         <div className="glass-card p-4 space-y-3">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2 text-xs font-bold text-slate-700 dark:text-slate-300">
-              <Filter className="w-3.5 h-3.5 text-blue-500" />
+              <RiFilter3Line className="w-3.5 h-3.5 text-blue-500" />
               <span>Topic & Subtopic Filters</span>
             </div>
             <span className="text-xs text-slate-400">
@@ -360,7 +360,7 @@ export default function QuantSection() {
               onClick={() => { setSelectedTopic('All'); setSelectedSubtopic('All'); }}
               className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-colors ${
                 selectedTopic === 'All' 
-                  ? 'bg-blue-600 text-white shadow-xs' 
+                  ? 'bg-blue-600 text-white shadow-sm' 
                   : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700'
               }`}
             >
@@ -372,7 +372,7 @@ export default function QuantSection() {
                 onClick={() => { setSelectedTopic(top); setSelectedSubtopic('All'); }}
                 className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-colors ${
                   selectedTopic === top 
-                    ? 'bg-blue-600 text-white shadow-xs' 
+                    ? 'bg-blue-600 text-white shadow-sm' 
                     : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700'
                 }`}
               >
@@ -467,7 +467,7 @@ export default function QuantSection() {
                 }`}
                 title={bookmarked ? "Bookmarked" : "Bookmark this question"}
               >
-                {bookmarked ? <BookmarkCheck className="w-4 h-4" /> : <Bookmark className="w-4 h-4" />}
+                {bookmarked ? <RiBookmarkFill className="w-4 h-4" /> : <RiBookmarkLine className="w-4 h-4" />}
               </button>
             </div>
           </div>
@@ -514,10 +514,10 @@ export default function QuantSection() {
                   </div>
                   <span className="flex-1">{opt}</span>
                   {isAnswerSubmitted && isCorrect && (
-                    <CheckCircle2 className="w-5 h-5 text-emerald-600 dark:text-emerald-400 shrink-0" />
+                    <RiCheckboxCircleLine className="w-5 h-5 text-emerald-600 dark:text-emerald-400 shrink-0" />
                   )}
                   {isAnswerSubmitted && isSelected && !isCorrect && (
-                    <XCircle className="w-5 h-5 text-rose-500 shrink-0" />
+                    <RiCloseCircleLine className="w-5 h-5 text-rose-500 shrink-0" />
                   )}
                 </button>
               );
@@ -567,7 +567,7 @@ export default function QuantSection() {
           {showExplanation && (
             <div className="p-5 rounded-2xl bg-blue-50/60 dark:bg-blue-950/40 border border-blue-200 dark:border-blue-900/60 space-y-3">
               <div className="flex items-center gap-2 font-bold text-xs text-blue-800 dark:text-blue-300">
-                <Sparkles className="w-4 h-4 text-blue-600" />
+                <RiLightbulbLine className="w-4 h-4 text-blue-600" />
                 Step-by-Step Mathematical Explanation & Shortcut Method:
               </div>
               <p className="text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed font-sans">

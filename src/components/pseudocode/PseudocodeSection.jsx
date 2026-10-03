@@ -1,10 +1,11 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { 
-  Terminal, Play, Pause, SkipForward, SkipBack, RotateCcw, 
-  Sparkles, CheckCircle2, XCircle, Code2, ArrowRight, 
-  HelpCircle, Eye, Cpu, BookOpen, Bookmark, BookmarkCheck,
-  Filter, Zap, Clock, Copy, Check, RotateCw, Award
-} from 'lucide-react';
+  RiTerminalBoxLine, RiPlayLine, RiPauseLine, RiSkipForwardLine, RiSkipBackLine, RiRestartLine, 
+  RiCheckboxCircleLine, RiCloseCircleLine, RiCodeSSlashLine, RiArrowRightLine, 
+  RiQuestionLine, RiEyeLine, RiCpuLine, RiBookOpenLine, RiBookmarkLine, RiBookmarkFill,
+  RiFilter3Line, RiSpeedLine, RiTimeLine, RiFileCopyLine, RiCheckLine, RiRefreshLine, RiAwardLine,
+  RiLightbulbLine
+} from '@remixicon/react';
 import { 
   fetchQuestions, fetchCodeTracingData, 
   toggleBookmark, isQuestionBookmarked, 
@@ -350,7 +351,7 @@ export default function PseudocodeSection() {
         <div>
           <div className="flex items-center gap-2 mb-1.5">
             <div className="p-2 rounded-xl bg-emerald-500 text-white shadow-md shadow-emerald-500/25">
-              <Terminal className="w-5 h-5" />
+              <RiTerminalBoxLine className="w-5 h-5" />
             </div>
             <h1 className="text-xl sm:text-2xl font-black text-slate-900 dark:text-white">
               Pseudocode & Programming Logic
@@ -371,7 +372,7 @@ export default function PseudocodeSection() {
               onClick={startRetryMode}
               className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-emerald-50 dark:bg-emerald-950/60 border border-emerald-300 dark:border-emerald-800 text-emerald-700 dark:text-emerald-300 text-xs font-bold hover:bg-emerald-100 transition-colors cursor-pointer"
             >
-              <RotateCcw className="w-3.5 h-3.5" />
+              <RiRestartLine className="w-3.5 h-3.5" />
               Retry Mistakes ({incorrectQuestions.length})
             </button>
           )}
@@ -388,18 +389,18 @@ export default function PseudocodeSection() {
           <button
             onClick={() => startSpeedTrainer(120)}
             disabled={isSpeedTrainerActive}
-            className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white font-bold text-xs shadow-md shadow-emerald-500/20 transition-all cursor-pointer disabled:opacity-50"
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded bg-slate-800 hover:bg-slate-900 text-white font-medium text-xs transition-colors cursor-pointer disabled:opacity-50"
           >
-            <Zap className="w-3.5 h-3.5" />
+            <RiSpeedLine className="w-3.5 h-3.5" />
             Speed Drill (2m)
           </button>
 
-          <div className="flex items-center gap-1 p-1 bg-slate-100 dark:bg-slate-800 rounded-xl">
+          <div className="flex items-center gap-1 p-0.5 bg-slate-100 dark:bg-slate-800 rounded">
             <button
               onClick={() => { stopSimInterval(); setActiveTab('simulator'); }}
-              className={`px-3 py-1 rounded-lg text-xs font-bold transition-colors cursor-pointer ${
+              className={`px-3 py-1 rounded text-xs font-medium transition-colors cursor-pointer ${
                 activeTab === 'simulator' 
-                  ? 'bg-white dark:bg-slate-900 text-emerald-600 dark:text-emerald-400 shadow-xs' 
+                  ? 'bg-white dark:bg-slate-900 text-slate-900 dark:text-white font-semibold shadow-xs' 
                   : 'text-slate-600 dark:text-slate-400'
               }`}
             >
@@ -407,9 +408,9 @@ export default function PseudocodeSection() {
             </button>
             <button
               onClick={() => { stopSimInterval(); setActiveTab('practice'); }}
-              className={`px-3 py-1 rounded-lg text-xs font-bold transition-colors cursor-pointer ${
+              className={`px-3 py-1 rounded text-xs font-medium transition-colors cursor-pointer ${
                 activeTab === 'practice' 
-                  ? 'bg-white dark:bg-slate-900 text-emerald-600 dark:text-emerald-400 shadow-xs' 
+                  ? 'bg-white dark:bg-slate-900 text-slate-900 dark:text-white font-semibold shadow-xs' 
                   : 'text-slate-600 dark:text-slate-400'
               }`}
             >
@@ -419,19 +420,19 @@ export default function PseudocodeSection() {
         </div>
       </div>
 
-      {/* Speed Trainer Active Overlay/Banner */}
+      {/* Speed Trainer Active Banner */}
       {isSpeedTrainerActive && (
-        <div className="glass-card p-4 bg-gradient-to-r from-emerald-500/10 via-teal-500/10 to-emerald-500/10 border-emerald-400 dark:border-emerald-600 flex items-center justify-between animate-pulse">
-          <div className="flex items-center gap-3">
-            <div className="p-2 rounded-xl bg-emerald-500 text-white animate-bounce">
-              <Clock className="w-4 h-4" />
+        <div className="p-3.5 rounded bg-slate-100 dark:bg-slate-850 border border-slate-200 dark:border-slate-700 flex items-center justify-between">
+          <div className="flex items-center gap-2.5">
+            <div className="p-1.5 rounded bg-slate-800 text-white">
+              <RiTimeLine className="w-4 h-4" />
             </div>
             <div>
-              <h4 className="text-sm font-extrabold text-emerald-900 dark:text-emerald-200">
-                Pseudocode Speed Drill in Progress!
+              <h4 className="text-xs font-bold text-slate-900 dark:text-white">
+                Pseudocode Speed Drill in Progress
               </h4>
-              <p className="text-xs text-slate-500 dark:text-slate-400">
-                Solve code outputs swiftly. Selecting an answer immediately advances.
+              <p className="text-[11px] text-slate-500 dark:text-slate-400">
+                Selecting an answer immediately advances to the next question.
               </p>
             </div>
           </div>
@@ -459,7 +460,7 @@ export default function PseudocodeSection() {
       {speedTrainerFinished && (
         <div className="glass-card p-6 border-emerald-400 dark:border-emerald-600 bg-emerald-50/50 dark:bg-emerald-950/20 text-center space-y-4">
           <div className="w-12 h-12 mx-auto rounded-full bg-emerald-500 text-white flex items-center justify-center shadow-lg">
-            <Award className="w-6 h-6" />
+            <RiAwardLine className="w-6 h-6" />
           </div>
           <h3 className="text-xl font-black text-slate-900 dark:text-white">
             Pseudocode Speed Drill Finished!
@@ -509,7 +510,7 @@ export default function PseudocodeSection() {
             {/* Exercise Selector bar */}
             <div className="flex flex-wrap items-center justify-between gap-3 p-4 rounded-2xl bg-slate-900 text-white shadow-md">
               <div className="flex flex-wrap items-center gap-2">
-                <Cpu className="w-4 h-4 text-emerald-400" />
+                <RiCpuLine className="w-4 h-4 text-emerald-400" />
                 <span className="text-xs font-bold text-slate-300">Choose Tracing Program:</span>
                 <div className="flex flex-wrap gap-1.5 ml-1">
                   {tracingExercises.map((ex, idx) => (
@@ -566,7 +567,7 @@ export default function PseudocodeSection() {
                       className="p-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-semibold flex items-center gap-1.5 transition-colors cursor-pointer"
                       title="Reset Simulator to Step 1"
                     >
-                      <RotateCcw className="w-3.5 h-3.5" />
+                      <RiRestartLine className="w-3.5 h-3.5" />
                       Reset
                     </button>
                   </div>
@@ -577,7 +578,7 @@ export default function PseudocodeSection() {
                       disabled={currentStepIdx === 0}
                       className="px-3.5 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 disabled:opacity-30 text-white text-xs font-bold flex items-center gap-1 transition-colors cursor-pointer"
                     >
-                      <SkipBack className="w-3.5 h-3.5" />
+                      <RiSkipBackLine className="w-3.5 h-3.5" />
                       Prev Step
                     </button>
                     <button
@@ -586,7 +587,7 @@ export default function PseudocodeSection() {
                       className="px-4 py-2 rounded-xl bg-emerald-500 hover:bg-emerald-600 disabled:opacity-30 text-white text-xs font-bold flex items-center gap-1 shadow-md shadow-emerald-500/20 transition-colors cursor-pointer"
                     >
                       <span>Next Step</span>
-                      <SkipForward className="w-3.5 h-3.5" />
+                      <RiSkipForwardLine className="w-3.5 h-3.5" />
                     </button>
                     <button
                       onClick={handleToggleRunAll}
@@ -598,12 +599,12 @@ export default function PseudocodeSection() {
                     >
                       {simRunning ? (
                         <>
-                          <Pause className="w-3.5 h-3.5 fill-white" />
+                          <RiPauseLine className="w-3.5 h-3.5 fill-white" />
                           Pause
                         </>
                       ) : (
                         <>
-                          <Play className="w-3.5 h-3.5 fill-white" />
+                          <RiPlayLine className="w-3.5 h-3.5 fill-white" />
                           Auto Play
                         </>
                       )}
@@ -640,7 +641,7 @@ export default function PseudocodeSection() {
                 <div className="glass-card p-5">
                   <div className="flex items-center justify-between mb-3">
                     <h4 className="font-bold text-xs uppercase tracking-wider text-slate-500 flex items-center gap-1.5">
-                      <Eye className="w-3.5 h-3.5 text-emerald-500" />
+                      <RiEyeLine className="w-3.5 h-3.5 text-emerald-500" />
                       Active Variables Watch
                     </h4>
                     <span className="text-[11px] text-slate-400 font-mono">Memory State</span>
@@ -667,7 +668,7 @@ export default function PseudocodeSection() {
                 {/* Terminal / Print Output */}
                 <div className="rounded-2xl bg-slate-950 border border-slate-800 p-4 text-xs font-mono text-slate-200 space-y-2">
                   <div className="text-[11px] font-bold text-slate-400 uppercase tracking-wider flex items-center gap-1.5">
-                    <Terminal className="w-3 h-3 text-emerald-400" />
+                    <RiTerminalBoxLine className="w-3 h-3 text-emerald-400" />
                     Standard Output (Stdout)
                   </div>
                   <div className="p-3 rounded-xl bg-black/60 border border-slate-800/80 min-h-[48px] flex items-center">
@@ -728,8 +729,8 @@ export default function PseudocodeSection() {
                         <span className="opacity-75">{String.fromCharCode(65 + idx)}.</span>
                         <span>{opt}</span>
                       </div>
-                      {simQuizSubmitted && isCorrect && <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />}
-                      {simQuizSubmitted && isSelected && !isCorrect && <XCircle className="w-4 h-4 text-rose-500 shrink-0" />}
+                      {simQuizSubmitted && isCorrect && <RiCheckboxCircleLine className="w-4 h-4 text-emerald-600 shrink-0" />}
+                      {simQuizSubmitted && isSelected && !isCorrect && <RiCloseCircleLine className="w-4 h-4 text-rose-500 shrink-0" />}
                     </button>
                   );
                 })}
@@ -768,7 +769,7 @@ export default function PseudocodeSection() {
           <div className="glass-card p-5 space-y-4">
             <div className="flex flex-wrap items-center justify-between gap-3">
               <div className="flex items-center gap-2">
-                <Filter className="w-4 h-4 text-emerald-500" />
+                <RiFilter3Line className="w-4 h-4 text-emerald-500" />
                 <span className="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">
                   Filter Pseudocode Topics & Levels
                 </span>
@@ -866,7 +867,7 @@ export default function PseudocodeSection() {
                         }`}
                         title={bookmarked ? "Bookmarked" : "Bookmark this question"}
                       >
-                        {bookmarked ? <BookmarkCheck className="w-4 h-4 text-amber-500" /> : <Bookmark className="w-4 h-4" />}
+                        {bookmarked ? <RiBookmarkFill className="w-4 h-4 text-amber-500" /> : <RiBookmarkLine className="w-4 h-4" />}
                       </button>
                     </div>
                   </div>
@@ -881,7 +882,7 @@ export default function PseudocodeSection() {
                     <div className="rounded-2xl bg-slate-950 border border-slate-800 shadow-lg overflow-hidden">
                       <div className="flex items-center justify-between px-4 py-2 bg-slate-900/90 border-b border-slate-800 text-slate-400 text-xs">
                         <div className="flex items-center gap-2">
-                          <Code2 className="w-3.5 h-3.5 text-emerald-400" />
+                          <RiCodeSSlashLine className="w-3.5 h-3.5 text-emerald-400" />
                           <span className="font-mono text-[11px]">program.pseudo</span>
                         </div>
                         <button
@@ -894,12 +895,12 @@ export default function PseudocodeSection() {
                         >
                           {copiedCode ? (
                             <>
-                              <Check className="w-3 h-3 text-emerald-400" />
+                              <RiCheckLine className="w-3 h-3 text-emerald-400" />
                               <span className="text-emerald-400">Copied</span>
                             </>
                           ) : (
                             <>
-                              <Copy className="w-3 h-3" />
+                              <RiFileCopyLine className="w-3 h-3" />
                               <span>Copy</span>
                             </>
                           )}
@@ -943,8 +944,8 @@ export default function PseudocodeSection() {
                             {letter}
                           </div>
                           <span className="flex-1 font-mono">{opt}</span>
-                          {isAnswerSubmitted && isCorrect && <CheckCircle2 className="w-5 h-5 text-emerald-600 shrink-0" />}
-                          {isAnswerSubmitted && isSelected && !isCorrect && <XCircle className="w-5 h-5 text-rose-500 shrink-0" />}
+                          {isAnswerSubmitted && isCorrect && <RiCheckboxCircleLine className="w-5 h-5 text-emerald-600 shrink-0" />}
+                          {isAnswerSubmitted && isSelected && !isCorrect && <RiCloseCircleLine className="w-5 h-5 text-rose-500 shrink-0" />}
                         </button>
                       );
                     })}
@@ -991,7 +992,7 @@ export default function PseudocodeSection() {
                     {showExplanation && (
                       <div className="p-5 rounded-2xl bg-emerald-50/60 dark:bg-emerald-950/30 border border-emerald-200 dark:border-emerald-800/60 space-y-2">
                         <span className="font-bold text-emerald-800 dark:text-emerald-300 block text-xs flex items-center gap-1.5">
-                          <Sparkles className="w-3.5 h-3.5" />
+                          <RiCodeSSlashLine className="w-3.5 h-3.5" />
                           Logical Execution Breakdown:
                         </span>
                         <p className="text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed whitespace-pre-line font-mono">

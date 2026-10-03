@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { 
-  Bookmark, BookmarkCheck, PlayCircle, Trash2, 
-  CheckCircle2, XCircle, ArrowRight, HelpCircle 
-} from 'lucide-react';
+  RiBookmarkLine, RiBookmarkFill, RiPlayCircleLine, RiDeleteBinLine, 
+  RiCheckboxCircleLine, RiCloseCircleLine, RiArrowRightLine, RiQuestionLine 
+} from '@remixicon/react';
 import { fetchBookmarks, toggleBookmark } from '../../services/api';
 
 export default function BookmarksSection({ onLaunchCustomQuiz }) {
@@ -44,8 +44,8 @@ export default function BookmarksSection({ onLaunchCustomQuiz }) {
       <div className="glass-card p-6 border-amber-200/50 dark:border-amber-900/50 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
           <div className="flex items-center gap-2 mb-1.5">
-            <div className="p-2 rounded-xl bg-amber-500 text-white shadow-xs">
-              <Bookmark className="w-5 h-5 fill-white" />
+            <div className="p-2 rounded-xl bg-amber-500 text-white shadow-sm">
+              <RiBookmarkLine className="w-5 h-5 fill-white" />
             </div>
             <h1 className="text-xl sm:text-2xl font-black text-slate-900 dark:text-white">
               Bookmarked Questions
@@ -64,7 +64,7 @@ export default function BookmarksSection({ onLaunchCustomQuiz }) {
             onClick={handlePracticeBookmarks}
             className="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-amber-600 hover:bg-amber-700 text-white text-xs font-bold shadow-md shadow-amber-500/25 transition-all cursor-pointer"
           >
-            <PlayCircle className="w-4 h-4" />
+            <RiPlayCircleLine className="w-4 h-4" />
             <span>Practice Saved ({bookmarks.length} Qs)</span>
           </button>
         )}
@@ -76,7 +76,7 @@ export default function BookmarksSection({ onLaunchCustomQuiz }) {
         </div>
       ) : bookmarks.length === 0 ? (
         <div className="glass-card p-12 text-center space-y-3">
-          <Bookmark className="w-10 h-10 text-slate-300 mx-auto" />
+          <RiBookmarkLine className="w-10 h-10 text-slate-300 mx-auto" />
           <h3 className="font-bold text-slate-700 dark:text-slate-300 text-sm">No bookmarked questions yet</h3>
           <p className="text-xs text-slate-400 max-w-sm mx-auto">
             Click the bookmark icon on any question in Quantitative, Verbal, Reasoning, or Mock Tests to save it here for targeted revision.
@@ -98,7 +98,7 @@ export default function BookmarksSection({ onLaunchCustomQuiz }) {
                   onClick={() => handleRemove(q.id)}
                   className="text-xs text-rose-500 hover:underline flex items-center gap-1 font-semibold"
                 >
-                  <Trash2 className="w-3.5 h-3.5" /> Remove
+                  <RiDeleteBinLine className="w-3.5 h-3.5" /> Remove
                 </button>
               </div>
 

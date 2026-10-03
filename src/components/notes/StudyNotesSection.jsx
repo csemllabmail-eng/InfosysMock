@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { 
-  FileText, Search, BookOpen, Sparkles, 
-  Lightbulb, AlertCircle, CheckCircle2, Copy, Check
-} from 'lucide-react';
+  RiFileTextLine, RiSearchLine, RiBookOpenLine, RiLightbulbLine, 
+  RiAlertLine, RiCheckboxCircleLine, RiFileCopyLine, RiCheckLine 
+} from '@remixicon/react';
 import { fetchStudyNotes } from '../../services/api';
 
 export default function StudyNotesSection() {
@@ -34,8 +34,8 @@ export default function StudyNotesSection() {
       <div className="glass-card p-6 border-slate-200/80 dark:border-slate-800 flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
           <div className="flex items-center gap-2 mb-1.5">
-            <div className="p-2 rounded-xl bg-indigo-600 text-white shadow-xs">
-              <FileText className="w-5 h-5" />
+            <div className="p-2 rounded-xl bg-indigo-600 text-white shadow-sm">
+              <RiFileTextLine className="w-5 h-5" />
             </div>
             <h1 className="text-xl sm:text-2xl font-black text-slate-900 dark:text-white">
               PrepHIT Study Notes & Formula Vault
@@ -51,7 +51,7 @@ export default function StudyNotesSection() {
 
         {/* Search Notes Input */}
         <div className="relative w-full sm:w-72">
-          <Search className="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2" />
+          <RiSearchLine className="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2" />
           <input
             type="text"
             value={searchTerm}
@@ -107,12 +107,12 @@ export default function StudyNotesSection() {
                 >
                   {copiedIdx === idx ? (
                     <>
-                      <Check className="w-3.5 h-3.5 text-emerald-500" />
+                      <RiCheckLine className="w-3.5 h-3.5 text-emerald-500" />
                       <span className="text-emerald-500 font-bold">Copied</span>
                     </>
                   ) : (
                     <>
-                      <Copy className="w-3.5 h-3.5" />
+                      <RiFileCopyLine className="w-3.5 h-3.5" />
                       <span>Copy</span>
                     </>
                   )}

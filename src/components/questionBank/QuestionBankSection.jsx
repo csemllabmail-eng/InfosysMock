@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { 
-  Database, Search, Filter, Plus, Upload, 
-  Trash2, Bookmark, BookmarkCheck, Sparkles, 
-  CheckCircle2, XCircle, Code, HelpCircle, X
-} from 'lucide-react';
+  RiDatabase2Line, RiSearchLine, RiFilter3Line, RiAddLine, RiUploadLine, 
+  RiDeleteBinLine, RiBookmarkLine, RiBookmarkFill, RiLightbulbLine, 
+  RiCheckboxCircleLine, RiCloseCircleLine, RiCodeLine, RiQuestionLine, RiCloseLine 
+} from '@remixicon/react';
 import { 
   getAllQuestions, addCustomQuestion, 
   importQuestionsJSON, deleteQuestion, 
@@ -125,7 +125,7 @@ export default function QuestionBankSection() {
       {/* Toast Notification */}
       {notification && (
         <div className="fixed bottom-6 right-6 z-50 p-4 rounded-2xl bg-slate-900 text-white shadow-2xl flex items-center gap-2 border border-slate-700 animate-bounce">
-          <CheckCircle2 className="w-5 h-5 text-emerald-400" />
+          <RiCheckboxCircleLine className="w-5 h-5 text-emerald-400" />
           <span className="text-xs font-bold">{notification}</span>
         </div>
       )}
@@ -134,8 +134,8 @@ export default function QuestionBankSection() {
       <div className="glass-card p-6 border-slate-200/80 dark:border-slate-800 flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
           <div className="flex items-center gap-2 mb-1.5">
-            <div className="p-2 rounded-xl bg-slate-800 text-white shadow-xs">
-              <Database className="w-5 h-5 text-brand-400" />
+            <div className="p-2 rounded-xl bg-slate-800 text-white shadow-sm">
+              <RiDatabase2Line className="w-5 h-5 text-brand-400" />
             </div>
             <h1 className="text-xl sm:text-2xl font-black text-slate-900 dark:text-white">
               Question Bank & Content Manager
@@ -154,14 +154,14 @@ export default function QuestionBankSection() {
             onClick={() => setShowImportModal(true)}
             className="flex items-center gap-1.5 px-3.5 py-2 rounded-xl border border-slate-200 dark:border-slate-700 text-xs font-bold hover:bg-slate-100 transition-colors cursor-pointer"
           >
-            <Upload className="w-3.5 h-3.5" />
+            <RiUploadLine className="w-3.5 h-3.5" />
             <span>Import JSON</span>
           </button>
           <button
             onClick={() => setShowAddModal(true)}
             className="flex items-center gap-1.5 px-4 py-2 rounded-xl bg-brand-600 hover:bg-brand-700 text-white text-xs font-bold shadow-md shadow-brand-500/25 transition-colors cursor-pointer"
           >
-            <Plus className="w-4 h-4" />
+            <RiAddLine className="w-4 h-4" />
             <span>Add Question</span>
           </button>
         </div>
@@ -171,7 +171,7 @@ export default function QuestionBankSection() {
       <div className="glass-card p-4 space-y-3">
         <div className="flex flex-col sm:flex-row items-center gap-3">
           <div className="relative flex-1 w-full">
-            <Search className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
+            <RiSearchLine className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
             <input
               type="text"
               value={searchQuery}
@@ -244,7 +244,7 @@ export default function QuestionBankSection() {
                     }`}
                     title="Bookmark"
                   >
-                    {isBm ? <BookmarkCheck className="w-3.5 h-3.5" /> : <Bookmark className="w-3.5 h-3.5" />}
+                    {isBm ? <RiBookmarkFill className="w-3.5 h-3.5" /> : <RiBookmarkLine className="w-3.5 h-3.5" />}
                   </button>
                   {q.tags?.includes("custom") && (
                     <button
@@ -252,7 +252,7 @@ export default function QuestionBankSection() {
                       className="p-1.5 rounded-lg text-rose-500 hover:bg-rose-50 transition-colors"
                       title="Delete Question"
                     >
-                      <Trash2 className="w-3.5 h-3.5" />
+                      <RiDeleteBinLine className="w-3.5 h-3.5" />
                     </button>
                   )}
                 </div>
@@ -280,7 +280,7 @@ export default function QuestionBankSection() {
                     }`}
                   >
                     <span>{String.fromCharCode(65 + i)}. {opt}</span>
-                    {i === q.correctAnswer && <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500 shrink-0" />}
+                    {i === q.correctAnswer && <RiCheckboxCircleLine className="w-3.5 h-3.5 text-emerald-500 shrink-0" />}
                   </div>
                 ))}
               </div>
@@ -325,7 +325,7 @@ export default function QuestionBankSection() {
                 Create New Assessment Question
               </h3>
               <button onClick={() => setShowAddModal(false)} className="text-slate-400 hover:text-slate-600">
-                <X className="w-4 h-4" />
+                <RiCloseLine className="w-4 h-4" />
               </button>
             </div>
 
@@ -446,7 +446,7 @@ export default function QuestionBankSection() {
                 Import Questions from JSON
               </h3>
               <button onClick={() => setShowImportModal(false)} className="text-slate-400 hover:text-slate-600">
-                <X className="w-4 h-4" />
+                <RiCloseLine className="w-4 h-4" />
               </button>
             </div>
 

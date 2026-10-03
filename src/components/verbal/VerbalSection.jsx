@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { 
-  Languages, BookOpen, Sparkles, CheckCircle2, XCircle, 
-  RotateCcw, ArrowRight, Bookmark, BookmarkCheck, 
-  HelpCircle, Volume2, Award, FileText, ChevronRight
-} from 'lucide-react';
+  RiTranslate2, RiBookOpenLine, RiLightbulbLine, RiCheckboxCircleLine, RiCloseCircleLine, 
+  RiRestartLine, RiArrowRightLine, RiBookmarkLine, RiBookmarkFill, 
+  RiQuestionLine, RiVolumeUpLine, RiAwardLine, RiFileTextLine, RiArrowRightSLine 
+} from '@remixicon/react';
 import { 
   fetchQuestions, toggleBookmark, isQuestionBookmarked, 
   logPracticeSession 
@@ -517,16 +517,16 @@ export default function VerbalSection() {
     <div className="space-y-6 pb-12">
       
       {/* Header & Sub-Tabs */}
-      <div className="glass-card p-6 border-purple-200/50 dark:border-purple-900/50 flex flex-col md:flex-row md:items-center justify-between gap-4">
+      <div className="glass-card p-6 border-slate-200 dark:border-slate-800 flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
           <div className="flex items-center gap-2 mb-1.5">
-            <div className="p-2 rounded-xl bg-purple-500 text-white shadow-md shadow-purple-500/25">
-              <Languages className="w-5 h-5" />
+            <div className="p-2 rounded-xl bg-teal-700 text-white shadow-md shadow-sm">
+              <RiTranslate2 className="w-5 h-5" />
             </div>
             <h1 className="text-xl sm:text-2xl font-black text-slate-900 dark:text-white">
               Verbal Ability Section
             </h1>
-            <span className="text-xs font-semibold px-2 py-0.5 rounded-full bg-purple-100 dark:bg-purple-950 text-purple-700 dark:text-purple-300">
+            <span className="text-xs font-semibold px-2 py-0.5 rounded-full bg-teal-50 dark:bg-teal-950/60 border border-teal-200 dark:border-teal-800 text-teal-800 dark:text-teal-300">
               300 Questions
             </span>
           </div>
@@ -541,7 +541,7 @@ export default function VerbalSection() {
             onClick={() => setActiveTab('practice')}
             className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-colors ${
               activeTab === 'practice' 
-                ? 'bg-white dark:bg-slate-900 text-purple-600 dark:text-purple-400 shadow-xs' 
+                ? 'bg-white dark:bg-slate-900 text-teal-700 dark:text-teal-400 shadow-sm' 
                 : 'text-slate-600 dark:text-slate-400 hover:text-slate-900'
             }`}
           >
@@ -551,7 +551,7 @@ export default function VerbalSection() {
             onClick={() => setActiveTab('flashcards')}
             className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-colors ${
               activeTab === 'flashcards' 
-                ? 'bg-white dark:bg-slate-900 text-purple-600 dark:text-purple-400 shadow-xs' 
+                ? 'bg-white dark:bg-slate-900 text-teal-700 dark:text-teal-400 shadow-sm' 
                 : 'text-slate-600 dark:text-slate-400 hover:text-slate-900'
             }`}
           >
@@ -561,7 +561,7 @@ export default function VerbalSection() {
             onClick={() => setActiveTab('trainer')}
             className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-colors ${
               activeTab === 'trainer' 
-                ? 'bg-white dark:bg-slate-900 text-purple-600 dark:text-purple-400 shadow-xs' 
+                ? 'bg-white dark:bg-slate-900 text-teal-700 dark:text-teal-400 shadow-sm' 
                 : 'text-slate-600 dark:text-slate-400 hover:text-slate-900'
             }`}
           >
@@ -584,7 +584,7 @@ export default function VerbalSection() {
                   onClick={() => setSelectedTopic(top)}
                   className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-colors ${
                     selectedTopic === top 
-                      ? 'bg-purple-600 text-white shadow-xs' 
+                      ? 'bg-teal-700 text-white shadow-sm' 
                       : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200'
                   }`}
                 >
@@ -601,7 +601,7 @@ export default function VerbalSection() {
                   onClick={() => setSelectedDifficulty(diff)}
                   className={`px-2.5 py-1 rounded-full text-xs font-semibold transition-colors cursor-pointer ${
                     selectedDifficulty === diff 
-                      ? 'bg-purple-600 text-white shadow-xs' 
+                      ? 'bg-teal-700 text-white shadow-sm' 
                       : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200'
                   }`}
                 >
@@ -625,7 +625,7 @@ export default function VerbalSection() {
               
               <div className="flex items-center justify-between gap-4 border-b border-slate-100 dark:border-slate-800 pb-4">
                 <div className="flex items-center gap-2">
-                  <span className="px-2.5 py-1 rounded-full text-xs font-bold bg-purple-100 dark:bg-purple-950 text-purple-700 dark:text-purple-300">
+                  <span className="px-2.5 py-1 rounded-full text-xs font-bold bg-teal-50 dark:bg-teal-950/60 border border-teal-200 dark:border-teal-800 text-teal-800 dark:text-teal-300">
                     Question {currentIndex + 1} of {questions.length}
                   </span>
                   <span className="text-xs font-semibold px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400">
@@ -645,7 +645,7 @@ export default function VerbalSection() {
                   }`}
                   title={bookmarked ? "Bookmarked" : "Bookmark this question"}
                 >
-                  {bookmarked ? <BookmarkCheck className="w-4 h-4" /> : <Bookmark className="w-4 h-4" />}
+                  {bookmarked ? <RiBookmarkFill className="w-4 h-4" /> : <RiBookmarkLine className="w-4 h-4" />}
                 </button>
               </div>
 
@@ -661,7 +661,7 @@ export default function VerbalSection() {
                   const isSelected = selectedAnswer === idx;
                   const isCorrect = idx === currentQ.correctAnswer;
 
-                  let optionStyle = "border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-850 hover:border-purple-300 dark:hover:border-purple-700";
+                  let optionStyle = "border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-850 hover:border-teal-400 dark:hover:border-teal-600";
 
                   if (isAnswerSubmitted) {
                     if (isCorrect) {
@@ -672,7 +672,7 @@ export default function VerbalSection() {
                       optionStyle = "border-slate-200 dark:border-slate-700 opacity-60";
                     }
                   } else if (isSelected) {
-                    optionStyle = "border-purple-500 bg-purple-50/60 dark:bg-purple-950/40 text-purple-900 dark:text-purple-100 ring-1 ring-purple-500 font-medium";
+                    optionStyle = "border-purple-500 bg-teal-50/50 dark:bg-teal-950/30 text-purple-900 dark:text-purple-100 ring-1 ring-purple-500 font-medium";
                   }
 
                   return (
@@ -683,16 +683,16 @@ export default function VerbalSection() {
                       className={`flex items-center gap-3 p-4 rounded-xl border text-left text-sm transition-all cursor-pointer ${optionStyle}`}
                     >
                       <div className={`w-7 h-7 rounded-lg flex items-center justify-center font-bold text-xs shrink-0 ${
-                        isSelected ? 'bg-purple-600 text-white' : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400'
+                        isSelected ? 'bg-teal-700 text-white' : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400'
                       }`}>
                         {letter}
                       </div>
                       <span className="flex-1">{opt}</span>
                       {isAnswerSubmitted && isCorrect && (
-                        <CheckCircle2 className="w-5 h-5 text-emerald-600 dark:text-emerald-400 shrink-0" />
+                        <RiCheckboxCircleLine className="w-5 h-5 text-emerald-600 dark:text-emerald-400 shrink-0" />
                       )}
                       {isAnswerSubmitted && isSelected && !isCorrect && (
-                        <XCircle className="w-5 h-5 text-rose-500 shrink-0" />
+                        <RiCloseCircleLine className="w-5 h-5 text-rose-500 shrink-0" />
                       )}
                     </button>
                   );
@@ -723,7 +723,7 @@ export default function VerbalSection() {
                     <button
                       onClick={handleSubmitAnswer}
                       disabled={selectedAnswer === null}
-                      className="px-5 py-2.5 rounded-xl bg-purple-600 hover:bg-purple-700 text-white font-bold text-xs shadow-md shadow-purple-500/25 disabled:opacity-50 transition-all cursor-pointer"
+                      className="px-5 py-2.5 rounded-xl bg-teal-700 hover:bg-teal-800 text-white font-bold text-xs shadow-md shadow-sm disabled:opacity-50 transition-all cursor-pointer"
                     >
                       Check Answer
                     </button>
@@ -740,15 +740,15 @@ export default function VerbalSection() {
 
               {/* Explanation & Rules */}
               {showExplanation && (
-                <div className="p-5 rounded-2xl bg-purple-50/60 dark:bg-purple-950/40 border border-purple-200 dark:border-purple-900/60 space-y-3">
-                  <div className="flex items-center gap-2 font-bold text-xs text-purple-800 dark:text-purple-300">
-                    <Sparkles className="w-4 h-4 text-purple-600" />
+                <div className="p-5 rounded-2xl bg-teal-50/50 dark:bg-teal-950/30 border border-teal-200 dark:border-teal-800 space-y-3">
+                  <div className="flex items-center gap-2 font-bold text-xs text-teal-900 dark:text-teal-300">
+                    <RiLightbulbLine className="w-4 h-4 text-purple-600" />
                     Grammar Rule & Linguistic Explanation:
                   </div>
                   <p className="text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed font-sans">
                     {currentQ.explanation}
                   </p>
-                  <div className="p-3 rounded-xl bg-white dark:bg-slate-900 border border-purple-100 dark:border-purple-800 text-[11px] text-slate-600 dark:text-slate-400">
+                  <div className="p-3 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-[11px] text-slate-600 dark:text-slate-400">
                     🔍 <span className="font-semibold text-slate-800 dark:text-slate-200">Infosys SE Verbal Pattern:</span> Sentence correction and para-jumble items test subject-verb distance, tense parallelism (such as sequence of past perfect with simple past), and modifier dangling. Always locate the genuine main clause subject first.
                   </div>
                 </div>
@@ -771,7 +771,7 @@ export default function VerbalSection() {
                 Click the card to flip and reveal meaning, example sentence, and synonyms.
               </p>
             </div>
-            <span className="text-xs font-bold px-3 py-1 bg-purple-100 dark:bg-purple-950 text-purple-700 dark:text-purple-300 rounded-full">
+            <span className="text-xs font-bold px-3 py-1 bg-teal-50 dark:bg-teal-950/60 border border-teal-200 dark:border-teal-800 text-teal-800 dark:text-teal-300 rounded-full">
               Card {flashcardIndex + 1} of {vocabCards.length}
             </span>
           </div>
@@ -779,13 +779,13 @@ export default function VerbalSection() {
           {/* Interactive Flip Card */}
           <div 
             onClick={() => setIsFlipped(!isFlipped)}
-            className="w-full min-h-[320px] rounded-3xl p-8 cursor-pointer transition-all duration-300 select-none bg-gradient-to-br from-white via-purple-50/30 to-indigo-50/30 dark:from-slate-900 dark:via-slate-850 dark:to-slate-900 border-2 border-purple-200 dark:border-purple-800 shadow-xl flex flex-col justify-between hover:scale-[1.01]"
+            className="w-full min-h-[300px] rounded-lg p-6 sm:p-8 cursor-pointer select-none bg-white dark:bg-[#0d1522] border border-slate-300 dark:border-slate-700 shadow-xs flex flex-col justify-between"
           >
             <div>
               <div className="flex items-center justify-between text-xs text-slate-400 mb-6">
                 <span className="uppercase font-bold tracking-wider">{currentFlashcard.type}</span>
-                <span className="text-purple-600 dark:text-purple-400 font-semibold flex items-center gap-1">
-                  <RotateCcw className="w-3.5 h-3.5" />
+                <span className="text-teal-700 dark:text-teal-400 font-semibold flex items-center gap-1">
+                  <RiRestartLine className="w-3.5 h-3.5" />
                   Click to Flip
                 </span>
               </div>
@@ -796,7 +796,7 @@ export default function VerbalSection() {
                   <h3 className="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white mb-2">
                     {currentFlashcard.word}
                   </h3>
-                  <p className="text-sm font-mono text-purple-600 dark:text-purple-400">
+                  <p className="text-sm font-mono text-teal-700 dark:text-teal-400">
                     {currentFlashcard.pronunciation}
                   </p>
                   <p className="text-xs text-slate-400 mt-6 italic">
@@ -846,7 +846,7 @@ export default function VerbalSection() {
               )}
             </div>
 
-            <div className="flex items-center justify-between pt-4 border-t border-purple-100 dark:border-purple-900/60">
+            <div className="flex items-center justify-between pt-4 border-t border-slate-200 dark:border-slate-800">
               <button
                 onClick={(e) => { e.stopPropagation(); toggleMastered(flashcardIndex); }}
                 className={`text-xs font-bold px-3 py-1.5 rounded-xl border transition-colors flex items-center gap-1.5 ${
@@ -855,7 +855,7 @@ export default function VerbalSection() {
                     : 'border-slate-200 dark:border-slate-700 text-slate-500 hover:bg-slate-100'
                 }`}
               >
-                <CheckCircle2 className="w-3.5 h-3.5" />
+                <RiCheckboxCircleLine className="w-3.5 h-3.5" />
                 {masteredCards.has(flashcardIndex) ? "Mastered" : "Mark as Mastered"}
               </button>
 
@@ -875,7 +875,7 @@ export default function VerbalSection() {
             </button>
             <button
               onClick={nextCard}
-              className="px-5 py-2.5 rounded-xl bg-purple-600 hover:bg-purple-700 text-white text-xs font-bold shadow-md shadow-purple-500/25 transition-colors"
+              className="px-5 py-2.5 rounded-xl bg-teal-700 hover:bg-teal-800 text-white text-xs font-bold shadow-md shadow-sm transition-colors"
             >
               Next Word
             </button>
@@ -895,8 +895,8 @@ export default function VerbalSection() {
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 my-6">
-              <div className="p-4 rounded-2xl bg-purple-50/70 dark:bg-purple-950/40 border border-purple-200 dark:border-purple-800">
-                <span className="text-xs font-semibold text-purple-700 dark:text-purple-300 uppercase">Grammar Accuracy</span>
+              <div className="p-4 rounded-2xl bg-teal-50/60 dark:bg-teal-950/30 border border-teal-200 dark:border-teal-800">
+                <span className="text-xs font-semibold text-teal-800 dark:text-teal-300 uppercase">Grammar Accuracy</span>
                 <div className="text-2xl font-black text-slate-900 dark:text-white mt-1">
                   {trainerStats.grammarAttempted > 0 ? `${Math.round((trainerStats.grammarCorrect / trainerStats.grammarAttempted) * 100)}%` : '0%'}
                 </div>
@@ -929,7 +929,7 @@ export default function VerbalSection() {
             {/* Frequently Repeated Mistakes & Remediation */}
             <div className="space-y-3 mt-6">
               <h3 className="font-bold text-sm text-slate-900 dark:text-white flex items-center gap-2">
-                <Sparkles className="w-4 h-4 text-amber-500" />
+                <RiLightbulbLine className="w-4 h-4 text-amber-500" />
                 Frequently Repeated Mistakes & Targeted Review:
               </h3>
               {trainerStats.mistakes.length > 0 ? (
@@ -954,7 +954,7 @@ export default function VerbalSection() {
               <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
                 {grammarRules.map((gr, idx) => (
                   <div key={idx} className="p-4 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-xs space-y-1.5">
-                    <div className="font-bold text-purple-600 dark:text-purple-400">{gr.title}</div>
+                    <div className="font-bold text-teal-700 dark:text-teal-400">{gr.title}</div>
                     <p className="text-slate-600 dark:text-slate-300">{gr.rule}</p>
                     <div className="p-2 rounded bg-slate-50 dark:bg-slate-900 text-[11px] text-slate-500 italic">
                       {gr.example}

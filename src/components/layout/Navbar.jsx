@@ -1,114 +1,96 @@
 import React from 'react';
 import { 
-  Sun, Moon, Menu, X, BookOpen, Search, Maximize2, Minimize2
-} from 'lucide-react';
+  RiSunLine, 
+  RiMoonLine, 
+  RiMenuLine, 
+  RiCloseLine, 
+  RiSearchLine, 
+  RiFullscreenLine, 
+  RiFullscreenExitLine, 
+  RiGraduationCapFill
+} from '@remixicon/react';
 
 export default function Navbar({ 
   darkMode, 
   setDarkMode, 
   sidebarOpen, 
   setSidebarOpen, 
-  dailyGoal,
   onNavigate,
   onOpenSearch,
   isZeroDistraction,
   onToggleZeroDistraction
 }) {
   return (
-    <header className="sticky top-0 z-30 h-16 bg-white/85 dark:bg-slate-900/85 backdrop-blur-md border-b border-slate-200/80 dark:border-slate-800 transition-colors">
+    <header className="sticky top-0 z-30 h-14 bg-white dark:bg-[#0d1522] border-b border-slate-200 dark:border-slate-800 transition-colors">
       <div className="flex items-center justify-between h-full px-4 lg:px-6">
         
         {/* Left: Mobile Toggle & Brand */}
         <div className="flex items-center gap-3">
           <button
             onClick={() => setSidebarOpen(!sidebarOpen)}
-            className="p-2 -ml-1 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg lg:hidden"
-            aria-label="Toggle Navigation"
+            className="p-1.5 -ml-1 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-md lg:hidden"
+            aria-label="Toggle Navigation Menu"
           >
-            {sidebarOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+            {sidebarOpen ? <RiCloseLine className="w-5 h-5" /> : <RiMenuLine className="w-5 h-5" />}
           </button>
 
-          <div 
+          <button 
             onClick={() => onNavigate('dashboard')}
-            className="flex items-center gap-2.5 cursor-pointer group"
+            className="flex items-center gap-2 text-left cursor-pointer group"
           >
-            <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-brand-600 to-indigo-600 text-white flex items-center justify-center font-black shadow-md shadow-brand-500/25 group-hover:scale-105 transition-transform text-xs">
-              HIT
+            <div className="w-8 h-8 rounded bg-brand-600 dark:bg-brand-500 text-white flex items-center justify-center font-bold text-sm">
+              <RiGraduationCapFill className="w-5 h-5" />
             </div>
             <div>
-              <div className="font-extrabold text-base tracking-tight text-slate-900 dark:text-white flex items-center gap-1.5">
-                PrepHIT <span className="text-brand-600 dark:text-brand-400 text-xs px-1.5 py-0.5 rounded bg-brand-50 dark:bg-brand-950/80 border border-brand-200 dark:border-brand-800">Infosys SE</span>
+              <div className="font-bold text-sm leading-tight text-slate-900 dark:text-white">
+                PrepHIT
               </div>
-              <p className="text-[11px] text-slate-500 dark:text-slate-400 hidden sm:block">
-                Hiring Assessment Prep Suite
+              <p className="text-[10px] text-slate-500 dark:text-slate-400 font-medium">
+                Infosys Assessment Portal
               </p>
             </div>
-          </div>
+          </button>
         </div>
 
         {/* Center: Search trigger */}
         <div className="hidden md:flex items-center">
           <button 
             onClick={onOpenSearch}
-            className="flex items-center gap-2 px-3.5 py-1.5 text-xs text-slate-400 bg-slate-100/80 dark:bg-slate-800/80 hover:bg-slate-200/60 dark:hover:bg-slate-700/60 border border-slate-200 dark:border-slate-700 rounded-full w-64 text-left transition-colors"
+            className="flex items-center gap-2 px-3 py-1.5 text-xs text-slate-500 dark:text-slate-400 bg-slate-50 dark:bg-slate-850 hover:bg-slate-100 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-700/80 rounded-md w-72 text-left transition-colors cursor-pointer"
           >
-            <Search className="w-3.5 h-3.5 text-slate-400" />
-            <span>Search 810+ questions, rules...</span>
-            <kbd className="ml-auto text-[10px] bg-white dark:bg-slate-900 px-1.5 py-0.5 rounded border border-slate-300 dark:border-slate-700 font-mono">
+            <RiSearchLine className="w-4 h-4 text-slate-400" />
+            <span className="truncate">Search syllabus, questions, topics...</span>
+            <kbd className="ml-auto text-[10px] bg-white dark:bg-slate-900 px-1.5 py-0.5 rounded border border-slate-200 dark:border-slate-700 font-mono text-slate-400">
               /
             </kbd>
           </button>
         </div>
 
-        {/* Right: Quick Links & Actions */}
-        <div className="flex items-center gap-2 sm:gap-3">
-          {/* Quick Mock Test Button */}
-          <button
-            onClick={() => onNavigate('mock')}
-            className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-brand-50 hover:bg-brand-100 text-brand-700 dark:bg-brand-950/60 dark:hover:bg-brand-900/80 dark:text-brand-300 border border-brand-200/80 dark:border-brand-800 text-xs font-semibold transition-colors cursor-pointer"
-          >
-            <span>Take Test</span>
-          </button>
-
-          {/* Study Notes quick link */}
-          <button
-            onClick={() => onNavigate('notes')}
-            className="p-2 text-slate-600 dark:text-slate-300 hover:text-brand-600 dark:hover:text-brand-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors hidden sm:block cursor-pointer"
-            title="Formula & Study Notes"
-          >
-            <BookOpen className="w-4 h-4" />
-          </button>
-
-          {/* Zero Distraction / Full Screen Mode Toggle */}
+        {/* Right: Functional Controls Only (No duplicate action buttons) */}
+        <div className="flex items-center gap-1.5 sm:gap-2">
+          {/* Examination Fullscreen Focus Mode */}
           <button
             onClick={onToggleZeroDistraction}
-            className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl border text-xs font-semibold transition-all cursor-pointer ${
+            className={`flex items-center gap-1.5 px-2.5 py-1.5 rounded-md border text-xs font-medium transition-all cursor-pointer ${
               isZeroDistraction 
-                ? 'bg-purple-600 text-white border-purple-500 shadow-md shadow-purple-500/25 ring-2 ring-purple-400/40' 
-                : 'bg-purple-50 hover:bg-purple-100 text-purple-700 dark:bg-purple-950/60 dark:hover:bg-purple-900/80 dark:text-purple-300 border-purple-200/80 dark:border-purple-800'
+                ? 'bg-slate-900 text-white border-slate-800 dark:bg-brand-600 dark:border-brand-500' 
+                : 'bg-white hover:bg-slate-50 text-slate-700 dark:bg-slate-800 dark:hover:bg-slate-750 dark:text-slate-200 border-slate-200 dark:border-slate-700'
             }`}
-            title={isZeroDistraction ? "Exit Zero Distraction Full Screen Mode (Esc)" : "Enter Zero Distraction Full Screen Mode"}
+            title={isZeroDistraction ? "Exit Focus Mode (Esc)" : "Fullscreen Focus Mode"}
           >
-            {isZeroDistraction ? <Minimize2 className="w-3.5 h-3.5" /> : <Maximize2 className="w-3.5 h-3.5" />}
-            <span className="hidden sm:inline font-bold">Zero Distraction</span>
+            {isZeroDistraction ? <RiFullscreenExitLine className="w-3.5 h-3.5" /> : <RiFullscreenLine className="w-3.5 h-3.5" />}
+            <span className="hidden sm:inline">Focus Mode</span>
           </button>
 
-          {/* Dark Mode Toggle */}
+          {/* Theme Toggle */}
           <button
             onClick={() => setDarkMode(!darkMode)}
-            className="p-2 text-slate-600 dark:text-slate-300 hover:text-brand-600 dark:hover:text-brand-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors"
-            title={darkMode ? "Switch to Light Mode" : "Switch to Dark Mode"}
-            aria-label="Toggle Dark Mode"
+            className="p-1.5 text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 rounded-md transition-colors cursor-pointer"
+            title={darkMode ? "Switch to Light Theme" : "Switch to Dark Theme"}
+            aria-label="Toggle Theme"
           >
-            {darkMode ? <Sun className="w-4 h-4 text-amber-400" /> : <Moon className="w-4 h-4" />}
+            {darkMode ? <RiSunLine className="w-4 h-4 text-amber-400" /> : <RiMoonLine className="w-4 h-4" />}
           </button>
-
-          {/* Candidate Profile Avatar */}
-          <div className="flex items-center gap-2 pl-1 border-l border-slate-200 dark:border-slate-800">
-            <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-brand-500 to-purple-600 text-white flex items-center justify-center font-bold text-xs ring-2 ring-white dark:ring-slate-900 shadow-sm">
-              C
-            </div>
-          </div>
         </div>
 
       </div>

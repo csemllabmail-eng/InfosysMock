@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { 
-  BarChart3, TrendingUp, Award, Clock, 
-  Target, Sparkles, CheckCircle2, AlertTriangle, 
-  ArrowUpRight, ArrowRight, Flame, Lightbulb, BookOpen, RotateCcw
-} from 'lucide-react';
+  RiBarChartBoxLine, RiLineChartLine, RiAwardLine, RiTimeLine, 
+  RiFocus3Line, RiCheckboxCircleLine, RiAlertLine, 
+  RiArrowRightUpLine, RiArrowRightLine, RiFireLine, RiLightbulbLine, RiBookOpenLine, RiRestartLine 
+} from '@remixicon/react';
 import { fetchAnalyticsData, clearAllUserData } from '../../services/api';
 
 export default function AnalyticsSection({ onNavigate }) {
@@ -63,7 +63,7 @@ export default function AnalyticsSection({ onNavigate }) {
         <div>
           <div className="flex items-center gap-2 mb-1.5">
             <div className="p-2 rounded-xl bg-brand-600 text-white shadow-md shadow-brand-500/25">
-              <BarChart3 className="w-5 h-5" />
+              <RiBarChartBoxLine className="w-5 h-5" />
             </div>
             <h1 className="text-xl sm:text-2xl font-black text-slate-900 dark:text-white">
               Preparation Analytics & Insights
@@ -76,7 +76,7 @@ export default function AnalyticsSection({ onNavigate }) {
 
         <div className="flex flex-wrap items-center gap-2">
           <span className="px-3 py-1.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs font-bold flex items-center gap-1.5">
-            <Award className="w-4 h-4 text-brand-600" />
+            <RiAwardLine className="w-4 h-4 text-brand-600" />
             Benchmark Target: 80% Accuracy
           </span>
           <button
@@ -89,7 +89,7 @@ export default function AnalyticsSection({ onNavigate }) {
             className="px-3 py-1.5 rounded-xl border border-slate-200 dark:border-slate-700 hover:bg-rose-50 hover:border-rose-300 dark:hover:bg-rose-950/40 dark:hover:border-rose-800 text-slate-600 hover:text-rose-600 dark:text-slate-400 dark:hover:text-rose-400 text-xs font-semibold flex items-center gap-1.5 transition-colors cursor-pointer"
             title="Reset practice history on this device"
           >
-            <RotateCcw className="w-3.5 h-3.5" />
+            <RiRestartLine className="w-3.5 h-3.5" />
             <span>Reset My Data</span>
           </button>
         </div>
@@ -130,7 +130,7 @@ export default function AnalyticsSection({ onNavigate }) {
         <div className="glass-card p-5">
           <span className="text-xs font-semibold text-slate-400">Current Streak</span>
           <div className="text-2xl sm:text-3xl font-black text-amber-500 mt-1 flex items-center gap-1">
-            <Flame className="w-6 h-6 fill-amber-500" />
+            <RiFireLine className="w-6 h-6 fill-amber-500" />
             {data.streakDays} {data.streakDays === 1 ? 'Day' : 'Days'}
           </div>
           <div className="text-[11px] text-amber-600 font-semibold mt-1">
@@ -139,17 +139,17 @@ export default function AnalyticsSection({ onNavigate }) {
         </div>
       </div>
 
-      {/* Smart Recommendations Section */}
-      <div className="glass-card p-6 border-brand-200/60 dark:border-brand-800/60 bg-gradient-to-br from-white via-brand-50/20 to-indigo-50/20 dark:from-slate-900 dark:via-slate-900 dark:to-slate-850">
+      {/* Analytical Recommendations Section */}
+      <div className="bg-white dark:bg-[#0d1522] border border-slate-200 dark:border-slate-800 rounded-lg p-5 shadow-xs">
         <div className="flex items-center gap-2 mb-4">
-          <div className="p-2 rounded-xl bg-purple-500 text-white shadow-xs">
-            <Sparkles className="w-4 h-4" />
+          <div className="p-1.5 rounded bg-brand-600 text-white">
+            <RiLightbulbLine className="w-4 h-4" />
           </div>
           <div>
-            <h2 className="font-extrabold text-base text-slate-900 dark:text-white">
-              Data-Driven Smart Recommendations
+            <h2 className="font-bold text-sm text-slate-900 dark:text-white">
+              Analytical Diagnostic Recommendations
             </h2>
-            <p className="text-xs text-slate-500">
+            <p className="text-xs text-slate-500 dark:text-slate-400">
               Personalized action items derived directly from your test logs and error frequencies.
             </p>
           </div>
@@ -176,7 +176,7 @@ export default function AnalyticsSection({ onNavigate }) {
                   className="px-3 py-1.5 rounded-lg bg-brand-50 dark:bg-brand-950/60 text-brand-700 dark:text-brand-300 hover:bg-brand-100 text-xs font-bold flex items-center gap-1 transition-colors cursor-pointer"
                 >
                   <span>{rec.action}</span>
-                  <ArrowRight className="w-3.5 h-3.5" />
+                  <RiArrowRightLine className="w-3.5 h-3.5" />
                 </button>
               </div>
             </div>
@@ -248,7 +248,7 @@ export default function AnalyticsSection({ onNavigate }) {
                     {w.count}
                   </span>
                   <div 
-                    className="w-full bg-gradient-to-t from-brand-600 to-indigo-500 rounded-t-xl transition-all duration-500 group-hover:brightness-110"
+                    className="w-full bg-brand-600 dark:bg-brand-500 rounded-t transition-all duration-300 group-hover:bg-brand-700"
                     style={{ height: `${heightPct}%` }}
                   />
                   <span className="text-xs font-semibold text-slate-400">
@@ -273,7 +273,7 @@ export default function AnalyticsSection({ onNavigate }) {
         <div className="glass-card p-6 space-y-4 border-rose-200/40 dark:border-rose-900/40">
           <div className="flex items-center gap-2">
             <div className="p-1.5 rounded-lg bg-rose-100 dark:bg-rose-950 text-rose-600">
-              <AlertTriangle className="w-4 h-4" />
+              <RiAlertLine className="w-4 h-4" />
             </div>
             <h3 className="font-bold text-sm text-slate-900 dark:text-white">
               Top Weak Areas Requiring Revision
@@ -306,7 +306,7 @@ export default function AnalyticsSection({ onNavigate }) {
         <div className="glass-card p-6 space-y-4 border-emerald-200/40 dark:border-emerald-900/40">
           <div className="flex items-center gap-2">
             <div className="p-1.5 rounded-lg bg-emerald-100 dark:bg-emerald-950 text-emerald-600">
-              <CheckCircle2 className="w-4 h-4" />
+              <RiCheckboxCircleLine className="w-4 h-4" />
             </div>
             <h3 className="font-bold text-sm text-slate-900 dark:text-white">
               Strongest Mastery Areas
